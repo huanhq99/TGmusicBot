@@ -1,11 +1,8 @@
-version: '3.8'
-
 services:
   tgmusicbot:
-    # 使用 Docker Hub 镜像（推荐）
+    # 使用 Docker Hub 镜像
     image: huanhq99/tgmusicbot:latest
-    # 或者本地构建
-    # build: .
+    # 或者本地构建: build: .
     
     container_name: tgmusicbot
     restart: unless-stopped
@@ -14,20 +11,25 @@ services:
       - "8080:8080"  # Web 管理界面
     
     volumes:
-      # 数据持久化
       - ./data:/app/data              # 数据库、缓存、日志
       - ./uploads:/app/uploads        # 下载的音乐文件
-      # 如果需要 MusicTag 集成，映射 MusicTag 监控目录
+      # MusicTag 集成（可选）
       # - /path/to/musictag/watch:/musictag
-    
-    env_file:
-      - .env
     
     environment:
       - TZ=Asia/Shanghai
       - DATA_DIR=/app/data
       - UPLOAD_DIR=/tmp/tgmusicbot_uploads
       - MUSIC_TARGET_DIR=/app/uploads
+      # Telegram 配置
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+      - ADMIN_USER_ID=${ADMIN_USER_ID}
+      # Emby 配置
+      - EMBY_URL=${EMBY_URL}
+      - EMBY_USERNAME=${EMBY_USERNAME}
+      - EMBY_PASSWORD=${EMBY_PASSWORD}
+      # 加密密钥
+      - PLAYLIST_BOT_KEY=${PLAYLIST_BOT_KEY}
     
     logging:
       driver: json-file
