@@ -1,24 +1,8 @@
-# 环境配置
-.env
+# 忽略所有文件
+*
 
-# 数据目录
-data/
+# 只保留这些
+!README.md
+!docker-compose.yml
+!.gitignore
 
-# Python
-__pycache__/
-*.py[cod]
-*.so
-.Python
-*.egg-info/
-dist/
-build/
-
-# IDE
-.vscode/
-.idea/
-
-# 日志
-*.log
-
-# macOS
-.DS_Store
