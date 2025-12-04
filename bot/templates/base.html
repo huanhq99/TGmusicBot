@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}TGmusicbot{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <style>
+        * { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+        :root { --primary: #6366f1; --primary-dark: #4f46e5; --secondary: #8b5cf6; --accent: #06b6d4; }
+        body { background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%); min-height: 100vh; }
+        .sidebar { background: rgba(15, 15, 35, 0.95); backdrop-filter: blur(20px); border-right: 1px solid rgba(255,255,255,0.05); min-height: 100vh; }
+        .logo-gradient { background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .nav-link { transition: all 0.3s ease; border-left: 3px solid transparent; position: relative; overflow: hidden; }
+        .nav-link::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 0; background: linear-gradient(90deg, rgba(99, 102, 241, 0.2), transparent); transition: width 0.3s ease; }
+        .nav-link:hover::before, .nav-link.active::before { width: 100%; }
+        .nav-link.active { border-left-color: var(--primary); background: linear-gradient(90deg, rgba(99, 102, 241, 0.15), transparent); }
+        .nav-link:hover { transform: translateX(5px); }
+        .nav-icon { width: 20px; text-align: center; background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; transition: all 0.3s ease; }
+        .glass-card:hover { background: rgba(255, 255, 255, 0.05); border-color: rgba(99, 102, 241, 0.3); transform: translateY(-2px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
+        .stat-card { background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; position: relative; overflow: hidden; }
+        .stat-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient); }
+        .stat-card.blue { --gradient: linear-gradient(90deg, #3b82f6, #06b6d4); }
+        .stat-card.green { --gradient: linear-gradient(90deg, #10b981, #34d399); }
+        .stat-card.purple { --gradient: linear-gradient(90deg, #8b5cf6, #a78bfa); }
+        .stat-card.orange { --gradient: linear-gradient(90deg, #f59e0b, #fbbf24); }
+        .stat-card.pink { --gradient: linear-gradient(90deg, #ec4899, #f472b6); }
+        .stat-icon { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+        .stat-card.blue .stat-icon { background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(6,182,212,0.1)); color: #3b82f6; }
+        .stat-card.green .stat-icon { background: linear-gradient(135deg, rgba(16,185,129,0.2), rgba(52,211,153,0.1)); color: #10b981; }
+        .stat-card.purple .stat-icon { background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(167,139,250,0.1)); color: #8b5cf6; }
+        .stat-card.orange .stat-icon { background: linear-gradient(135deg, rgba(245,158,11,0.2), rgba(251,191,36,0.1)); color: #f59e0b; }
+        .stat-card.pink .stat-icon { background: linear-gradient(135deg, rgba(236,72,153,0.2), rgba(244,114,182,0.1)); color: #ec4899; }
+        .stat-value { font-size: 2rem; font-weight: 700; background: linear-gradient(135deg, #fff, rgba(255,255,255,0.7)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .data-table { width: 100%; }
+        .data-table thead { background: rgba(255,255,255,0.02); }
+        .data-table th { color: rgba(255,255,255,0.5); font-weight: 500; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 1rem 1.5rem; text-align: left; }
+        .data-table td { padding: 1rem 1.5rem; color: rgba(255,255,255,0.8); border-top: 1px solid rgba(255,255,255,0.03); }
+        .data-table tbody tr { transition: all 0.2s ease; }
+        .data-table tbody tr:hover { background: rgba(99, 102, 241, 0.05); }
+        .badge { padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; }
+        .badge-qq { background: linear-gradient(135deg, rgba(16,185,129,0.2), rgba(16,185,129,0.1)); color: #10b981; border: 1px solid rgba(16,185,129,0.3); }
+        .badge-ncm { background: linear-gradient(135deg, rgba(239,68,68,0.2), rgba(239,68,68,0.1)); color: #ef4444; border: 1px solid rgba(239,68,68,0.3); }
+        .progress-bar { height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: 3px; transition: width 0.5s ease; }
+        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 0.5rem 1.5rem; border-radius: 10px; font-weight: 500; transition: all 0.3s ease; border: none; cursor: pointer; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3); }
+        .btn-danger { background: linear-gradient(135deg, #ef4444, #dc2626); color: white; padding: 0.4rem 1rem; border-radius: 8px; font-size: 0.85rem; transition: all 0.3s ease; border: none; cursor: pointer; }
+        .btn-danger:hover { transform: translateY(-1px); box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3); }
+        .select-modern { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 0.5rem 1rem; border-radius: 10px; cursor: pointer; transition: all 0.3s ease; }
+        .select-modern:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2); }
+        .select-modern option { background: #1a1a2e; color: white; }
+        .pagination-btn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); padding: 0.5rem 1rem; border-radius: 8px; transition: all 0.3s ease; cursor: pointer; }
+        .pagination-btn:hover:not(:disabled) { background: rgba(99, 102, 241, 0.2); border-color: var(--primary); color: white; }
+        .pagination-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeInUp 0.5s ease forwards; }
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.02); }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+        .pulse-dot { width: 8px; height: 8px; background: #10b981; border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.2); } }
+        .empty-state { text-align: center; padding: 4rem 2rem; color: rgba(255,255,255,0.4); }
+        .empty-state i { font-size: 4rem; margin-bottom: 1rem; opacity: 0.3; }
+    </style>
+</head>
+<body class="text-white">
+    <div class="flex">
+        <aside class="sidebar w-64 fixed h-full z-50">
+            <div class="p-6 border-b border-white border-opacity-5">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-music text-white"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold logo-gradient">TGmusicbot</h1>
+                        <p class="text-xs text-gray-500">音乐管理机器人</p>
+                    </div>
+                </div>
+            </div>
+            <nav class="mt-6 px-3">
+                <p class="text-xs text-gray-600 uppercase tracking-wider px-4 mb-3">主菜单</p>
+                <a href="/" class="nav-link flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white rounded-lg mb-1 {% if request.path == '/' %}active{% endif %}">
+                    <i class="fas fa-th-large nav-icon"></i><span>仪表盘</span>
+                </a>
+                <a href="/playlists" class="nav-link flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white rounded-lg mb-1 {% if request.path == '/playlists' %}active{% endif %}">
+                    <i class="fas fa-list nav-icon"></i><span>歌单同步</span>
+                </a>
+                <a href="/uploads" class="nav-link flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white rounded-lg mb-1 {% if request.path == '/uploads' %}active{% endif %}">
+                    <i class="fas fa-cloud-upload-alt nav-icon"></i><span>音乐上传</span>
+                </a>
+                <p class="text-xs text-gray-600 uppercase tracking-wider px-4 mb-3 mt-6">管理</p>
+                <a href="/requests" class="nav-link flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white rounded-lg mb-1 {% if request.path == '/requests' %}active{% endif %}">
+                    <i class="fas fa-inbox nav-icon"></i><span>歌曲申请</span>
+                    <span id="pending-badge" class="hidden ml-auto bg-red-500 text-white text-xs px-2 py-0.5 rounded-full"></span>
+                </a>
+                <a href="/users" class="nav-link flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white rounded-lg mb-1 {% if request.path == '/users' %}active{% endif %}">
+                    <i class="fas fa-users nav-icon"></i><span>用户管理</span>
+                </a>
+                <a href="/settings" class="nav-link flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white rounded-lg mb-1 {% if request.path == '/settings' %}active{% endif %}">
+                    <i class="fas fa-cog nav-icon"></i><span>系统设置</span>
+                </a>
+            </nav>
+            <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-white border-opacity-5">
+                <div class="flex items-center justify-between px-3">
+                    <div class="flex items-center gap-3">
+                        <div class="pulse-dot"></div>
+                        <span class="text-xs text-gray-500">Bot 运行中</span>
+                    </div>
+                    <button onclick="logout()" class="text-xs text-gray-500 hover:text-white transition">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+        <main class="ml-64 flex-1 p-8 min-h-screen">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+    <script>
+        // 检查待审核数量
+        async function checkPendingRequests() {
+            try {
+                const res = await fetch('/api/stats');
+                const data = await res.json();
+                const badge = document.getElementById('pending-badge');
+                if (data.pending_requests > 0) {
+                    badge.textContent = data.pending_requests;
+                    badge.classList.remove('hidden');
+                }
+            } catch (e) {}
+        }
+        
+        async function logout() {
+            await fetch('/api/logout', { method: 'POST' });
+            window.location.href = '/login';
+        }
+        
+        checkPendingRequests();
+    </script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

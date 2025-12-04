@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+
+{% block title %}歌单同步 - TGmusicbot{% endblock %}
+
+{% block content %}
+<div class="mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+    <div>
+        <h2 class="text-2xl font-bold mb-1">歌单同步记录</h2>
+        <p class="text-gray-500">查看所有同步到 Emby 的歌单</p>
+    </div>
+    <div class="flex gap-3">
+        <select id="filter-platform" class="select-modern">
+            <option value="">全部平台</option>
+            <option value="qq">QQ音乐</option>
+            <option value="ncm">网易云</option>
+        </select>
+    </div>
+</div>
+
+<!-- 统计卡片 -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+    <div class="stat-card green p-5">
+        <div class="flex items-center gap-4">
+            <div class="stat-icon">
+                <i class="fas fa-list"></i>
+            </div>
+            <div>
+                <p class="text-gray-400 text-sm">总歌单数</p>
+                <p class="stat-value text-xl" id="total-playlists">--</p>
+            </div>
+        </div>
+    </div>
+    <div class="stat-card blue p-5">
+        <div class="flex items-center gap-4">
+            <div class="stat-icon">
+                <i class="fas fa-music"></i>
+            </div>
+            <div>
+                <p class="text-gray-400 text-sm">同步歌曲</p>
+                <p class="stat-value text-xl" id="total-songs">--</p>
+            </div>
+        </div>
+    </div>
+    <div class="stat-card purple p-5">
+        <div class="flex items-center gap-4">
+            <div class="stat-icon">
+                <i class="fas fa-percentage"></i>
+            </div>
+            <div>
+                <p class="text-gray-400 text-sm">平均匹配率</p>
+                <p class="stat-value text-xl" id="avg-rate">--%</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 表格 -->
+<div class="glass-card overflow-hidden">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>歌单名称</th>
+                <th>平台</th>
+                <th>歌曲数</th>
+                <th>匹配数</th>
+                <th>匹配率</th>
+                <th>同步时间</th>
+            </tr>
+        </thead>
+        <tbody id="playlist-table">
+            <tr>
+                <td colspan="6" class="text-center text-gray-500 py-12">
+                    <i class="fas fa-spinner fa-spin mr-2"></i>加载中...
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- 分页 -->
+<div class="mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+    <p class="text-gray-500 text-sm" id="pagination-info">第 1 页</p>
+    <div class="flex gap-2">
+        <button id="prev-btn" class="pagination-btn" disabled>
+            <i class="fas fa-chevron-left mr-1"></i> 上一页
+        </button>
+        <button id="next-btn" class="pagination-btn">
+            下一页 <i class="fas fa-chevron-right ml-1"></i>
+        </button>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    let currentPage = 1;
+    const perPage = 15;
+
+    async function loadStats() {
+        try {
+            const res = await fetch('/api/stats');
+            const data = await res.json();
+            document.getElementById('total-playlists').textContent = data.playlists.toLocaleString();
+            document.getElementById('total-songs').textContent = data.songs_synced.toLocaleString();
+        } catch (e) {}
+    }
+
+    async function loadPlaylists() {
+        const platform = document.getElementById('filter-platform').value;
+        let url = `/api/playlists?page=${currentPage}&per_page=${perPage}`;
+        if (platform) url += `&platform=${platform}`;
+
+        try {
+            const res = await fetch(url);
+            const data = await res.json();
+            const tbody = document.getElementById('playlist-table');
+
+            if (data.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="6" class="empty-state">
+                            <i class="fas fa-inbox"></i>
+                            <p>暂无歌单记录</p>
+                        </td>
+                    </tr>`;
+                return;
+            }
+
+            // 计算平均匹配率
+            const avgRate = data.reduce((sum, p) => sum + p.match_rate, 0) / data.length;
+            document.getElementById('avg-rate').textContent = avgRate.toFixed(1) + '%';
+
+            tbody.innerHTML = data.map(p => `
+                <tr>
+                    <td>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-gradient-to-br ${p.platform === 'qq' ? 'from-green-500 to-green-600' : 'from-red-500 to-red-600'} flex items-center justify-center shadow-lg">
+                                <i class="fas fa-${p.platform === 'qq' ? 'qq' : 'cloud'} text-white"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium truncate max-w-xs">${p.playlist_name}</p>
+                                <p class="text-xs text-gray-500">ID: ${p.telegram_id.slice(-6)}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="badge ${p.platform === 'qq' ? 'badge-qq' : 'badge-ncm'}">
+                            ${p.platform === 'qq' ? 'QQ音乐' : '网易云'}
+                        </span>
+                    </td>
+                    <td class="text-gray-300">${p.total_songs}</td>
+                    <td class="text-gray-300">${p.matched_songs}</td>
+                    <td>
+                        <div class="flex items-center gap-3">
+                            <div class="progress-bar w-20">
+                                <div class="progress-fill" style="width: ${p.match_rate}%"></div>
+                            </div>
+                            <span class="text-sm font-medium ${p.match_rate >= 80 ? 'text-green-400' : p.match_rate >= 50 ? 'text-yellow-400' : 'text-red-400'}">${p.match_rate}%</span>
+                        </div>
+                    </td>
+                    <td class="text-gray-500">${new Date(p.created_at).toLocaleString()}</td>
+                </tr>
+            `).join('');
+
+            document.getElementById('prev-btn').disabled = currentPage === 1;
+            document.getElementById('next-btn').disabled = data.length < perPage;
+            document.getElementById('pagination-info').textContent = `第 ${currentPage} 页`;
+        } catch (e) {
+            console.error('加载失败:', e);
+        }
+    }
+
+    document.getElementById('filter-platform').addEventListener('change', () => {
+        currentPage = 1;
+        loadPlaylists();
+    });
+
+    document.getElementById('prev-btn').addEventListener('click', () => {
+        if (currentPage > 1) { currentPage--; loadPlaylists(); }
+    });
+
+    document.getElementById('next-btn').addEventListener('click', () => {
+        currentPage++;
+        loadPlaylists();
+    });
+
+    loadStats();
+    loadPlaylists();
+</script>
+{% endblock %}

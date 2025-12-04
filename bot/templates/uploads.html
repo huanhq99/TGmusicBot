@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+
+{% block title %}音乐上传 - TGmusicbot{% endblock %}
+
+{% block content %}
+<div class="mb-8">
+    <h2 class="text-2xl font-bold mb-1">音乐上传记录</h2>
+    <p class="text-gray-500">通过 Telegram 上传到服务器的音乐文件</p>
+</div>
+
+<!-- 统计卡片 -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+    <div class="stat-card purple p-5">
+        <div class="flex items-center gap-4">
+            <div class="stat-icon">
+                <i class="fas fa-file-audio"></i>
+            </div>
+            <div>
+                <p class="text-gray-400 text-sm">总文件数</p>
+                <p class="stat-value text-xl" id="total-uploads">--</p>
+            </div>
+        </div>
+    </div>
+    <div class="stat-card pink p-5">
+        <div class="flex items-center gap-4">
+            <div class="stat-icon">
+                <i class="fas fa-database"></i>
+            </div>
+            <div>
+                <p class="text-gray-400 text-sm">总大小</p>
+                <p class="stat-value text-xl" id="total-size">-- MB</p>
+            </div>
+        </div>
+    </div>
+    <div class="stat-card blue p-5">
+        <div class="flex items-center gap-4">
+            <div class="stat-icon">
+                <i class="fas fa-calendar-day"></i>
+            </div>
+            <div>
+                <p class="text-gray-400 text-sm">今日上传</p>
+                <p class="stat-value text-xl" id="today-uploads">--</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 表格 -->
+<div class="glass-card overflow-hidden">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>文件信息</th>
+                <th>原文件名</th>
+                <th>大小</th>
+                <th>上传者</th>
+                <th>时间</th>
+            </tr>
+        </thead>
+        <tbody id="upload-table">
+            <tr>
+                <td colspan="5" class="text-center text-gray-500 py-12">
+                    <i class="fas fa-spinner fa-spin mr-2"></i>加载中...
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- 分页 -->
+<div class="mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+    <p class="text-gray-500 text-sm" id="pagination-info">第 1 页</p>
+    <div class="flex gap-2">
+        <button id="prev-btn" class="pagination-btn" disabled>
+            <i class="fas fa-chevron-left mr-1"></i> 上一页
+        </button>
+        <button id="next-btn" class="pagination-btn">
+            下一页 <i class="fas fa-chevron-right ml-1"></i>
+        </button>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    let currentPage = 1;
+    const perPage = 15;
+
+    async function loadStats() {
+        try {
+            const res = await fetch('/api/stats');
+            const data = await res.json();
+            document.getElementById('total-uploads').textContent = data.uploads.toLocaleString();
+            document.getElementById('total-size').textContent = data.upload_size_mb + ' MB';
+        } catch (e) {}
+    }
+
+    async function loadUploads() {
+        try {
+            const res = await fetch(`/api/uploads?page=${currentPage}&per_page=${perPage}`);
+            const data = await res.json();
+            const tbody = document.getElementById('upload-table');
+
+            if (data.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="5" class="empty-state">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>暂无上传记录</p>
+                            <p class="text-sm mt-2">通过 Telegram 发送音频文件即可上传</p>
+                        </td>
+                    </tr>`;
+                return;
+            }
+
+            // 今日上传
+            const today = new Date().toDateString();
+            const todayCount = data.filter(u => new Date(u.created_at).toDateString() === today).length;
+            document.getElementById('today-uploads').textContent = todayCount;
+
+            tbody.innerHTML = data.map(u => {
+                const ext = u.saved_name.split('.').pop().toUpperCase();
+                const extColors = {
+                    'MP3': 'from-blue-500 to-cyan-500',
+                    'FLAC': 'from-purple-500 to-pink-500',
+                    'M4A': 'from-green-500 to-teal-500',
+                    'WAV': 'from-orange-500 to-yellow-500'
+                };
+                const colorClass = extColors[ext] || 'from-gray-500 to-gray-600';
+                
+                return `
+                <tr>
+                    <td>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-gradient-to-br ${colorClass} flex items-center justify-center shadow-lg">
+                                <span class="text-xs font-bold text-white">${ext}</span>
+                            </div>
+                            <div>
+                                <p class="font-medium truncate max-w-xs">${u.saved_name}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="text-gray-400 truncate max-w-xs" title="${u.original_name}">${u.original_name}</td>
+                    <td>
+                        <span class="px-2 py-1 rounded-lg bg-white bg-opacity-5 text-sm">
+                            ${u.file_size_mb} MB
+                        </span>
+                    </td>
+                    <td>
+                        <code class="text-xs bg-indigo-500 bg-opacity-20 text-indigo-300 px-2 py-1 rounded">${u.telegram_id}</code>
+                    </td>
+                    <td class="text-gray-500">${new Date(u.created_at).toLocaleString()}</td>
+                </tr>
+            `}).join('');
+
+            document.getElementById('prev-btn').disabled = currentPage === 1;
+            document.getElementById('next-btn').disabled = data.length < perPage;
+            document.getElementById('pagination-info').textContent = `第 ${currentPage} 页`;
+        } catch (e) {
+            console.error('加载失败:', e);
+        }
+    }
+
+    document.getElementById('prev-btn').addEventListener('click', () => {
+        if (currentPage > 1) { currentPage--; loadUploads(); }
+    });
+
+    document.getElementById('next-btn').addEventListener('click', () => {
+        currentPage++;
+        loadUploads();
+    });
+
+    loadStats();
+    loadUploads();
+</script>
+{% endblock %}

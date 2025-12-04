@@ -36,6 +36,8 @@ services:
       - EMBY_URL=${EMBY_URL}
       - EMBY_USERNAME=${EMBY_USERNAME}
       - EMBY_PASSWORD=${EMBY_PASSWORD}
+      # Emby 自动扫描间隔（小时，0=禁用）
+      # - EMBY_SCAN_INTERVAL=6
       # 加密密钥
       - PLAYLIST_BOT_KEY=${PLAYLIST_BOT_KEY}
     
