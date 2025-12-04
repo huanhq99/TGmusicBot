@@ -24,6 +24,14 @@ services:
       # Telegram 配置
       - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
       - ADMIN_USER_ID=${ADMIN_USER_ID}
+      # Pyrogram 大文件上传支持（可选，可上传超过 20MB 的文件）
+      # - TG_API_ID=${TG_API_ID}
+      # - TG_API_HASH=${TG_API_HASH}
+      # Telegram Local Bot API Server（可选，支持上传大文件）
+      # - TELEGRAM_API_URL=http://telegram-bot-api:8081/bot
+      # Web 管理界面登录（强烈建议设置）
+      - WEB_USERNAME=${WEB_USERNAME:-admin}
+      - WEB_PASSWORD=${WEB_PASSWORD}
       # Emby 配置
       - EMBY_URL=${EMBY_URL}
       - EMBY_USERNAME=${EMBY_USERNAME}

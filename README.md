@@ -30,6 +30,16 @@ Telegram 音乐管理机器人 - 同步歌单到 Emby + 自动下载缺失歌曲
 - 通过 Telegram 发送音频文件
 - 自动保存到服务器
 - 支持 MP3, FLAC, M4A, WAV 等格式
+- 支持大文件上传（需配置 Pyrogram）
+
+### 📝 歌曲补全申请
+- 用户可申请下载缺失的歌曲
+- 管理员 Telegram/Web 审核
+- 审核结果自动通知用户
+
+### 🔐 权限管理
+- Web 管理界面登录保护
+- 用户上传/申请权限控制
 
 ### 🖥️ Web 管理界面
 - 仪表盘总览
@@ -116,6 +126,8 @@ cp .env.example .env
 | `/status` | 查看状态 |
 | `/search <关键词>` | 搜索并下载歌曲 |
 | `/album <专辑名>` | 搜索并下载专辑 |
+| `/request <歌曲-歌手>` | 申请补全歌曲 |
+| `/myrequests` | 查看我的申请 |
 | `/schedule` | 查看订阅的歌单 |
 | `/unschedule <序号>` | 取消订阅歌单 |
 | `/rescan` | 重新扫描 Emby 库 |
@@ -146,6 +158,26 @@ cp .env.example .env
 
 ## 🔧 高级配置
 
+### 大文件上传 (Pyrogram)
+默认 Telegram Bot API 文件上传限制为 20MB，配置 Pyrogram 可上传最大 2GB 文件。
+
+1. 访问 https://my.telegram.org 创建应用
+2. 获取 `API_ID` 和 `API_HASH`
+3. 设置环境变量：
+```bash
+TG_API_ID=你的API_ID
+TG_API_HASH=你的API_HASH
+```
+
+### Telegram Local Bot API Server
+另一种支持大文件的方式，需要自建 API Server。
+
+1. 部署 [Telegram Bot API Server](https://github.com/tdlib/telegram-bot-api)
+2. 设置环境变量：
+```bash
+TELEGRAM_API_URL=http://你的api地址:8081/bot
+```
+
 ### MusicTag 集成
 在 Web 设置页面配置 MusicTag 监控目录，下载的音乐会自动移动到该目录进行刮削。
 
@@ -172,6 +204,20 @@ TGmusicbot/
 ```
 
 ## 📝 更新日志
+
+### v2.4.0
+- ✨ 新增 Web 管理界面登录保护
+- ✨ 新增用户权限管理（上传/申请权限）
+- ✨ 新增 `/request` 歌曲补全申请功能
+- ✨ 新增 `/myrequests` 查看申请状态
+- ✨ 管理员 Telegram 审核推送
+- ✨ 支持 Pyrogram 大文件上传（最大 2GB）
+- ✨ 音频格式白名单限制
+
+### v2.3.0
+- ✨ 新增 Telegram Local Bot API Server 支持（上传大文件）
+- 🔧 修复 Cookie 读取问题
+- 🔧 修复异步事件循环问题
 
 ### v2.2.0
 - ✨ 新增 `/search` 搜索下载单曲
