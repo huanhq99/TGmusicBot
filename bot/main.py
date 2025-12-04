@@ -1143,30 +1143,25 @@ async def cmd_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
     help_text = """
 **📖 TGmusicbot 使用帮助**
 
-**歌单同步功能：**
-直接发送 QQ音乐/网易云音乐 歌单链接
+**🎵 歌单同步：** 直接发送歌单链接
+**📤 上传音乐：** 直接发送音频文件
 
-**音乐上传功能：**
-直接发送音频文件或文档
+**📋 常用命令：**
+`/ss 关键词` - 搜索下载歌曲
+`/al 专辑名` - 搜索下载专辑
+`/req 歌曲-歌手` - 申请补全歌曲
+`/mr` - 查看我的申请
+`/sub` - 查看订阅歌单
+`/unsub 序号` - 取消订阅
+`/scan` - 手动扫描Emby库
+`/si 小时` - 设置自动扫描间隔
 
-**搜索下载功能：**
-/search <关键词> - 搜索歌曲并下载
-/album <专辑名> - 搜索专辑并下载
+**🔧 基础命令：**
+`/b 用户名 密码` - 绑定Emby
+`/unbind` - 解除绑定
+`/s` - 查看状态
 
-**定时同步：**
-/schedule - 查看已订阅的歌单
-/unschedule <序号> - 取消订阅
-
-**命令列表：**
-/start - 主菜单
-/help - 帮助信息
-/bind <用户名> <密码> - 绑定 Emby
-/unbind - 解除绑定
-/status - 查看状态
-/search <关键词> - 搜索歌曲
-/album <专辑名> - 搜索专辑
-/schedule - 查看订阅歌单
-/unschedule <序号> - 取消订阅
+💡 所有短命令都有完整版本，如 /ss = /search
 """
     await update.message.reply_text(help_text, parse_mode='Markdown')
 
@@ -2506,21 +2501,21 @@ def main():
     
     app = builder.build()
     
-    # 命令
+    # 命令（支持短命令和完整命令）
     app.add_handler(CommandHandler("start", cmd_start))
     app.add_handler(CommandHandler("help", cmd_help))
-    app.add_handler(CommandHandler("bind", cmd_bind))
+    app.add_handler(CommandHandler(["bind", "b"], cmd_bind))  # /b 绑定
     app.add_handler(CommandHandler("unbind", cmd_unbind))
-    app.add_handler(CommandHandler("status", cmd_status))
-    app.add_handler(CommandHandler("rescan", cmd_rescan))
+    app.add_handler(CommandHandler(["status", "s"], cmd_status))  # /s 状态
+    app.add_handler(CommandHandler(["rescan", "scan", "rs"], cmd_rescan))  # /scan /rs 扫库
     app.add_handler(CommandHandler("ncmstatus", cmd_ncm_status))
-    app.add_handler(CommandHandler("search", cmd_search))
-    app.add_handler(CommandHandler("album", cmd_album))
-    app.add_handler(CommandHandler("schedule", cmd_schedule))
-    app.add_handler(CommandHandler("unschedule", cmd_unschedule))
-    app.add_handler(CommandHandler("scaninterval", cmd_scaninterval))
-    app.add_handler(CommandHandler("request", cmd_request))
-    app.add_handler(CommandHandler("myrequests", cmd_myrequests))
+    app.add_handler(CommandHandler(["search", "ss"], cmd_search))  # /ss 搜索
+    app.add_handler(CommandHandler(["album", "al"], cmd_album))  # /al 专辑
+    app.add_handler(CommandHandler(["schedule", "sub"], cmd_schedule))  # /sub 订阅列表
+    app.add_handler(CommandHandler(["unschedule", "unsub"], cmd_unschedule))  # /unsub 取消订阅
+    app.add_handler(CommandHandler(["scaninterval", "si"], cmd_scaninterval))  # /si 扫描间隔
+    app.add_handler(CommandHandler(["request", "req"], cmd_request))  # /req 申请
+    app.add_handler(CommandHandler(["myrequests", "mr"], cmd_myrequests))  # /mr 我的申请
     
     # 回调
     app.add_handler(CallbackQueryHandler(handle_match_callback, pattern='^match_'))
@@ -2543,19 +2538,18 @@ def main():
         # 注册命令菜单（用户输入 / 时显示）
         from telegram import BotCommand
         commands = [
-            BotCommand("start", "主菜单"),
-            BotCommand("help", "使用帮助"),
-            BotCommand("bind", "绑定 Emby 账户"),
-            BotCommand("unbind", "解除绑定"),
-            BotCommand("status", "查看状态"),
-            BotCommand("search", "搜索并下载歌曲"),
-            BotCommand("album", "搜索并下载专辑"),
-            BotCommand("request", "申请补全歌曲"),
-            BotCommand("myrequests", "查看我的申请"),
-            BotCommand("schedule", "查看订阅歌单"),
-            BotCommand("unschedule", "取消订阅歌单"),
-            BotCommand("scaninterval", "设置媒体库扫描间隔"),
-            BotCommand("rescan", "重新扫描 Emby 库"),
+            BotCommand("start", "🏠 主菜单"),
+            BotCommand("help", "❓ 帮助"),
+            BotCommand("b", "🔑 绑定Emby (bind)"),
+            BotCommand("s", "📊 状态 (status)"),
+            BotCommand("ss", "🔍 搜歌 (search)"),
+            BotCommand("al", "💿 下专辑 (album)"),
+            BotCommand("req", "📝 申请歌曲 (request)"),
+            BotCommand("mr", "📋 我的申请 (myrequests)"),
+            BotCommand("sub", "📅 订阅列表 (schedule)"),
+            BotCommand("unsub", "❌ 取消订阅 (unschedule)"),
+            BotCommand("scan", "🔄 扫描Emby (rescan)"),
+            BotCommand("si", "⏱️ 扫描间隔 (scaninterval)"),
         ]
         await application.bot.set_my_commands(commands)
         logger.info("已注册 Telegram 命令菜单")
