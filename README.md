@@ -94,10 +94,11 @@ services:
       - "8080:8080"  # Web 管理界面
     
     volumes:
-      - ./data:/app/data              # 数据库、缓存、日志
-      - ./uploads:/app/uploads        # 下载的音乐文件
-      # MusicTag 集成（可选）
-      # - /path/to/musictag/watch:/musictag
+      - /data:/app/data              # 数据库、缓存、日志
+      - /uploads:/app/uploads        # 下载的音乐文件
+      # 文件自动整理（可选）
+      - /path/to/watch:/watch       # 监控来源目录
+      - /path/to/music:/music       # 整理目标目录
     
     environment:
       - TZ=Asia/Shanghai
