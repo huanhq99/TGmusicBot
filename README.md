@@ -81,21 +81,54 @@ EOF
 2. **创建 docker-compose.yml**
 
 ```yaml
-version: '3.8'
 services:
   tgmusicbot:
+    # 使用 Docker Hub 镜像
     image: huanhq99/tgmusicbot:latest
+    # 或者本地构建: build: .
+    
     container_name: tgmusicbot
     restart: unless-stopped
+    
     ports:
-      - "8080:8080"
+      - "8080:8080"  # Web 管理界面
+    
     volumes:
-      - ./data:/app/data
-      - ./uploads:/app/uploads
-    env_file:
-      - .env
+      - ./data:/app/data              # 数据库、缓存、日志
+      - ./uploads:/app/uploads        # 下载的音乐文件
+      # MusicTag 集成（可选）
+      # - /path/to/musictag/watch:/musictag
+    
     environment:
       - TZ=Asia/Shanghai
+      - DATA_DIR=/app/data
+      - UPLOAD_DIR=/tmp/tgmusicbot_uploads
+      - MUSIC_TARGET_DIR=/app/uploads
+      # Telegram 配置
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+      - ADMIN_USER_ID=${ADMIN_USER_ID}
+      # Pyrogram 大文件上传支持（可选，可上传超过 20MB 的文件）
+      # - TG_API_ID=${TG_API_ID}
+      # - TG_API_HASH=${TG_API_HASH}
+      # Telegram Local Bot API Server（可选，支持上传大文件）
+      # - TELEGRAM_API_URL=http://telegram-bot-api:8081/bot
+      # Web 管理界面登录（强烈建议设置）
+      - WEB_USERNAME=${WEB_USERNAME:-admin}
+      - WEB_PASSWORD=${WEB_PASSWORD}
+      # Emby 配置
+      - EMBY_URL=${EMBY_URL}
+      - EMBY_USERNAME=${EMBY_USERNAME}
+      - EMBY_PASSWORD=${EMBY_PASSWORD}
+      # Emby 自动扫描间隔（小时，0=禁用）
+      # - EMBY_SCAN_INTERVAL=6
+      # 加密密钥
+      - PLAYLIST_BOT_KEY=${PLAYLIST_BOT_KEY}
+    
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
 ```
 
 3. **启动服务**
