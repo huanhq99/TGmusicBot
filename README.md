@@ -5,16 +5,22 @@ Telegram 音乐管理机器人 - 同步歌单到 Emby + 自动下载缺失歌曲
 ## ✨ 功能特性
 
 ### 🎵 歌单同步
-- 支持 **QQ音乐** 和 **网易云音乐** 歌单
+- 支持 **网易云音乐**、**QQ音乐**、**Spotify** 歌单
 - 自动匹配 Emby 媒体库歌曲
 - 支持模糊匹配和完全匹配模式
 - 自动创建 Emby 歌单
 
 ### 📥 自动下载
 - 自动下载 Emby 中缺失的歌曲
-- 支持网易云 VIP 音质（需登录）
-- 音质可选：标准/高品质/无损
+- 支持网易云 + QQ音乐双平台（跨平台自动切换）
+- 网易云下载失败自动尝试 QQ 音乐
+- 多种音质可选：标准/高品质/无损/Hi-Res/Master
 - 下载完成自动触发 Emby 扫库
+
+### 🔐 账号登录
+- 网易云：扫码登录 / Cookie 登录
+- QQ音乐：扫码登录 / Cookie 登录
+- Cookie 刷新功能延长有效期
 
 ### 🔍 搜索下载
 - `/search <关键词>` - 搜索并下载单曲
@@ -26,11 +32,10 @@ Telegram 音乐管理机器人 - 同步歌单到 Emby + 自动下载缺失歌曲
 - 发现新歌曲自动通知
 - 一键下载新增歌曲
 
-### 🔄 Emby 自动扫描
+### 🔄 Emby 联动
 - 可配置定时自动扫描 Emby 媒体库
-- 支持 Telegram 命令配置扫描间隔
+- 支持 Emby Webhook 实时入库通知
 - Web 管理界面可视化配置
-- 确保 Emby 库与本地文件同步
 
 ### 📤 音乐上传
 - 通过 Telegram 发送音频文件
@@ -40,18 +45,16 @@ Telegram 音乐管理机器人 - 同步歌单到 Emby + 自动下载缺失歌曲
 
 ### 📝 歌曲补全申请
 - 用户可申请下载缺失的歌曲
+- 用户可申请同步歌单（需管理员审批）
 - 管理员 Telegram/Web 审核
 - 审核结果自动通知用户
 
-### 🔐 权限管理
-- Web 管理界面登录保护
-- 用户上传/申请权限控制
-
 ### 🖥️ Web 管理界面
 - 仪表盘总览
-- 网易云扫码/Cookie 登录
+- 网易云/QQ音乐 扫码登录
 - 下载音质设置
-- MusicTag 集成配置
+- 下载历史记录
+- 文件自动整理配置
 
 ## 🚀 快速部署
 
@@ -183,9 +186,12 @@ cp .env.example .env
 直接发送歌单链接：
 - 网易云: `https://music.163.com/playlist?id=xxx`
 - QQ音乐: `https://y.qq.com/n/ryqq/playlist/xxx`
+- Spotify: `https://open.spotify.com/playlist/xxx`
 
-### 3. 登录网易云（下载功能）
-访问 Web 管理界面 → 设置 → 使用 Cookie 登录
+### 3. 登录音乐平台（下载功能）
+访问 Web 管理界面 → 设置 → 扫码登录或 Cookie 登录
+- 支持网易云音乐、QQ音乐
+- 推荐使用扫码登录（有效期更长）
 
 ### 4. 搜索下载
 ```
@@ -222,10 +228,24 @@ TELEGRAM_API_URL=http://你的api地址:8081/bot
 在 Web 设置页面配置 MusicTag 监控目录，下载的音乐会自动移动到该目录进行刮削。
 
 ### 音质设置
+
+**网易云音乐：**
+- `standard` - 标准音质 (128kbps MP3)
+- `higher` - 较高音质 (192kbps MP3)
+- `exhigh` - 极高音质 (320kbps MP3) [默认]
+- `lossless` - 无损 SQ (FLAC) [需VIP]
+- `hires` - 高清臻音 Hi-Res [需VIP]
+- `jyeffect` - 高清环绕声 [需VIP]
+- `sky` - 沉浸环绕声 [需VIP]
+- `jymaster` - 超清母带 Master [需SVIP]
+
+**QQ音乐：**
 - `standard` - 标准音质 (128kbps)
-- `higher` - 较高音质 (192kbps)  
-- `exhigh` - 极高音质 (320kbps) [默认]
-- `lossless` - 无损音质 (FLAC) [需VIP]
+- `higher` - HQ高品质 (320kbps)
+- `lossless` - 无损 SQ (FLAC) [需VIP]
+- `hires` - 臻品母带 Hi-Res [需SVIP]
+- `dolby` - 臻品全景声 Dolby [需SVIP]
+- `master` - 臻品母带2.0 [需SVIP]
 
 ## 📁 目录结构
 
@@ -234,7 +254,8 @@ TGmusicbot/
 ├── bot/
 │   ├── main.py           # Telegram Bot 主程序
 │   ├── web.py            # Web 管理界面
-│   ├── ncm_downloader.py # 网易云下载模块
+│   ├── ncm_downloader.py # 音乐下载模块（网易云+QQ音乐）
+│   ├── file_organizer.py # 文件自动整理模块
 │   └── templates/        # HTML 模板
 ├── data/                 # 数据目录（数据库、缓存）
 ├── uploads/              # 音乐文件目录
@@ -245,7 +266,24 @@ TGmusicbot/
 
 ## 📝 更新日志
 
-### v1.5.1
+### v1.5.5
+- ✨ 新增 QQ 音乐扫码登录（Cookie 有效期更长）
+- ✨ 新增 Cookie 刷新功能（延长有效期最长 90 天）
+- 🎨 更新关于页面功能列表和版本号
+
+### v1.5.4
+- ✨ 新增 Spotify 歌单同步支持
+- ✨ 网易云下载失败自动尝试 QQ 音乐（跨平台下载）
+- ✨ 新增更多音质选项（Hi-Res、Master、Dolby 等）
+- ✨ 未匹配歌曲列表分页显示
+- 🔧 更新 Cookie 获取说明（使用 Application 标签页）
+
+### v1.5.3
+- ✨ 新增 Emby Webhook 实时入库通知
+- ✨ 新增歌单同步申请功能（用户申请，管理员审批）
+- ✨ 新增下载历史记录
+
+### v1.5.2
 - ✨ 新增下载失败重试按钮（一键重试所有失败歌曲）
 - ✨ 搜索下载记录自动保存到下载历史
 - 🔧 修复音频预览在整理模式下不可用的问题
