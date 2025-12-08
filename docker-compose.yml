@@ -20,7 +20,9 @@ services:
       - UPLOAD_DIR=/tmp/tgmusicbot_uploads
       - MUSIC_TARGET_DIR=/app/uploads
       # Telegram 配置
-      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      # 兼容旧变量（可选）
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN:-}
       - ADMIN_USER_ID=${ADMIN_USER_ID}
       # Pyrogram 大文件上传支持（可选，可上传超过 20MB 的文件）
       # - TG_API_ID=${TG_API_ID}
