@@ -26,35 +26,36 @@ services:
     volumes:
       - ./data:/app/data              # 数据库、缓存、日志
       - ./uploads:/app/uploads        # 下载的音乐文件
-      - /path/to/music:/music       # 整理目标目录
+      - /path/to/music:/music         # 整理目标目录（可选）
     environment:
       - TZ=Asia/Shanghai
       - DATA_DIR=/app/data
       - UPLOAD_DIR=/tmp/tgmusicbot_uploads
       - MUSIC_TARGET_DIR=/app/uploads
-      # Telegram 配置（Bot的token和管理员ID）
-      - TELEGRAM_BOT_TOKEN=
-      - ADMIN_USER_ID=
-      # TelegramAPi 大文件上传支持（可选，可上传超过 20MB 的文件）
-      - TG_API_ID=
-      - TG_API_HASH=
+      # Telegram 配置（Bot Token 和管理员 ID）
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - ADMIN_USER_ID=${ADMIN_USER_ID}
+      # Telegram API 大文件上传支持（可选，可上传超过 20MB 的文件）
+      - TG_API_ID=${TG_API_ID:-}
+      - TG_API_HASH=${TG_API_HASH:-}
       # Web 管理界面用户名密码
-      - WEB_USERNAME=
-      - WEB_PASSWORD=
+      - WEB_USERNAME=${WEB_USERNAME:-admin}
+      - WEB_PASSWORD=${WEB_PASSWORD}
       # Emby 配置
-      - EMBY_URL=
-      - EMBY_USERNAME=
-      - EMBY_PASSWORD=
+      - EMBY_URL=${EMBY_URL}
+      - EMBY_USERNAME=${EMBY_USERNAME}
+      - EMBY_PASSWORD=${EMBY_PASSWORD}
       # Emby 自动扫描间隔（小时，0=禁用）
-      - EMBY_SCAN_INTERVAL=6
+      - EMBY_SCAN_INTERVAL=${EMBY_SCAN_INTERVAL:-6}
       # 加密密钥（自定义）
-      - PLAYLIST_BOT_KEY=
+      - PLAYLIST_BOT_KEY=${PLAYLIST_BOT_KEY}
     
     logging:
       driver: json-file
       options:
         max-size: "10m"
         max-file: "3"
+
 	 ```
 
 
