@@ -14,6 +14,7 @@
 
 ## 🚀 Docker 快速部署
 **创建 `docker-compose.yml`**
+
 	 ```yaml
 services:
   tgmusicbot:
