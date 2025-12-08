@@ -172,7 +172,8 @@ TGmusicbot/
 ---
 ##  💰 赞助
 - **如果你觉得该项目能帮到你，且有条件的情况下可以请我喝杯咖啡**
-<img src="https://img.huanhq.com/1765174910475_e0bda6e3bae25cceadb246e71a814aea.jpg" alt="赞助" width="200">
+<img src="https://img.huanhq.com/1765174910475_e0bda6f3bae25cceadb246e71a814aea.jpg" width="200" alt="赞助">
+
 ## 📄 License
 MIT License
 
