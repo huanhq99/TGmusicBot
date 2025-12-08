@@ -15,64 +15,53 @@
 ## 🚀 Docker 快速部署
 **创建 `docker-compose.yml`**
 	 ```yaml
-	 services:
-		 tgmusicbot:
-			 image: huanhq99/tgmusicbot:latest
-			 container_name: tgmusicbot
-			 restart: unless-stopped
-			 ports:
-				 - "8080:8080"
-			 volumes:
-				 - ./data:/app/data
-				 - ./uploads:/app/uploads
-				 # 可选：文件整理器目录
-				 # - /path/to/music:/music
-			 environment:
-				 - TZ=Asia/Shanghai
-				 - DATA_DIR=/app/data
-				 - UPLOAD_DIR=/tmp/tgmusicbot_uploads
-				 - MUSIC_TARGET_DIR=/app/uploads
-				 - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
-				 - TELEGRAM_TOKEN=${TELEGRAM_TOKEN:-}
-				 - ADMIN_USER_ID=${ADMIN_USER_ID}
-				 - WEB_USERNAME=${WEB_USERNAME:-admin}
-				 - WEB_PASSWORD=${WEB_PASSWORD}
-				 - EMBY_URL=${EMBY_URL}
-				 - EMBY_USERNAME=${EMBY_USERNAME}
-				 - EMBY_PASSWORD=${EMBY_PASSWORD}
-				 - PLAYLIST_BOT_KEY=${PLAYLIST_BOT_KEY}
-				 # 其他可选：
-				 # - EMBY_SCAN_INTERVAL=6
-				 # - TG_API_ID=${TG_API_ID}
-				 # - TG_API_HASH=${TG_API_HASH}
-				 # - TELEGRAM_API_URL=http://telegram-bot-api:8081/bot
-			 logging:
-				 driver: json-file
-				 options:
-					 max-size: "10m"
-					 max-file: "3"
+services:
+  tgmusicbot:
+    image: huanhq99/tgmusicbot:latest
+    container_name: tgmusicbot
+    restart: unless-stopped
+    ports:
+      - "8080:8080"  # Web 管理界面
+    volumes:
+      - ./data:/app/data              # 数据库、缓存、日志
+      - ./uploads:/app/uploads        # 下载的音乐文件
+      - /path/to/music:/music       # 整理目标目录
+    environment:
+      - TZ=Asia/Shanghai
+      - DATA_DIR=/app/data
+      - UPLOAD_DIR=/tmp/tgmusicbot_uploads
+      - MUSIC_TARGET_DIR=/app/uploads
+      # Telegram 配置（Bot的token和管理员ID）
+      - TELEGRAM_BOT_TOKEN=
+      - ADMIN_USER_ID=
+      # TelegramAPi 大文件上传支持（可选，可上传超过 20MB 的文件）
+      - TG_API_ID=
+      - TG_API_HASH=
+      # Web 管理界面用户名密码
+      - WEB_USERNAME=
+      - WEB_PASSWORD=
+      # Emby 配置
+      - EMBY_URL=
+      - EMBY_USERNAME=
+      - EMBY_PASSWORD=
+      # Emby 自动扫描间隔（小时，0=禁用）
+      - EMBY_SCAN_INTERVAL=6
+      # 加密密钥（自定义）
+      - PLAYLIST_BOT_KEY=
+    
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
 	 ```
 
-	 > 想启用本地 Bot API 或给文件整理器单独挂载目录？可以在启动时追加 `-f deploy/docker-compose.extras.yml`。音乐代理仍建议单独在国内机器部署，只需把 `MUSIC_PROXY_URL` 指向该主机即可，无需和机器人放在同一台服务器。
 
 3. **启动与访问**
 	 ```bash
 	 docker compose up -d
 	 # Web 管理界面: http://<服务器IP>:8080
 	 ```
-
-### 本地运行
-```bash
-
-cd TGmusicBot
-pip install -r requirements.txt
-cp .env.example .env  # 按需填写
-python scripts/preflight_env_check.py  # 可选：检查关键变量是否完整
-./start.sh
-```
-
-> 若脚本提示缺少变量，可直接编辑 `.env` 再次执行，确保部署前即捕获配置问题。
-
 ---
 
 ## ⚙️ 环境变量速查
