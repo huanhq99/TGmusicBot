@@ -40,7 +40,6 @@
 				 - ./data:/app/data
 				 - ./uploads:/app/uploads
 				 # 可选：文件整理器目录
-				 # - /path/to/watch:/watch
 				 # - /path/to/music:/music
 			 environment:
 				 - TZ=Asia/Shanghai
