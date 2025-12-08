@@ -88,8 +88,6 @@ services:
   tgmusicbot:
     # 使用 Docker Hub 镜像
     image: huanhq99/tgmusicbot:latest
-    # 或者本地构建: build: .
-    
     container_name: tgmusicbot
     restart: unless-stopped
     
@@ -97,11 +95,10 @@ services:
       - "8080:8080"  # Web 管理界面
     
     volumes:
-      - /data:/app/data              # 数据库、缓存、日志
-      - /uploads:/app/uploads        # 下载的音乐文件
+      - ./data:/app/data              # 数据库、缓存、日志
+      - ./uploads:/app/uploads        # 下载的音乐文件
       # 文件自动整理（可选）
-      - /path/to/watch:/watch       # 监控来源目录
-      - /path/to/music:/music       # 整理目标目录
+      # - /path/to/music:/music       # 整理目标目录
     
     environment:
       - TZ=Asia/Shanghai
