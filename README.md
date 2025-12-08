@@ -15,7 +15,7 @@
 ## 🚀 Docker 快速部署
 **创建 `docker-compose.yml`**
 
-	 ```yaml
+```yaml
 services:
   tgmusicbot:
     image: huanhq99/tgmusicbot:latest
@@ -55,8 +55,7 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
-
-	 ```
+```
 
 
 3. **启动与访问**
