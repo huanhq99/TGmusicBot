@@ -1,8 +1,0 @@
-# 忽略所有文件
-*
-
-# 只保留这些
-!README.md
-!docker-compose.yml
-!.gitignore
-
