@@ -134,7 +134,6 @@ services:
 
 ## 🔧 进阶特性
 - **大文件上传**：配置 `TG_API_ID` / `TG_API_HASH` 启用 Pyrogram，支持 2GB 文件。
-- **本地 Bot API**：设置 `TELEGRAM_API_URL` 使用自建 Telegram Bot API Server。
 - **代理下载**：`MUSIC_PROXY_URL` + `MUSIC_PROXY_KEY` 让海外 VPS 通过国内代理访问 QQ/网易云。
 - **音质与元数据**：Web 中分别设置网易云 / QQ 音质（standard / higher / exhigh / lossless / hires / master 等），下载完成自动写入封面、歌词、标签。
 - **安全建议**：可在反代层对 `/webhook/emby` 添加 Basic Auth 或 IP 白名单。
