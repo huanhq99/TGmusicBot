@@ -60,6 +60,7 @@ services:
         max-file: "3"
 ```
 
+> **如果你是国外机器，则需要部署music-proxy-compose.yaml把部署好的RUL KEY填在变量中即可**
 
 3. **启动与访问**
 	 ```bash
