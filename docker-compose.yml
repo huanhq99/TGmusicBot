@@ -31,6 +31,9 @@ services:
       - EMBY_SCAN_INTERVAL=${EMBY_SCAN_INTERVAL:-6}
       # 加密密钥（自定义）
       - PLAYLIST_BOT_KEY=${PLAYLIST_BOT_KEY}
+      # QQ音乐国内中转URi KEy
+      - MUSIC_PROXY_URL=
+      - MUSIC_PROXY_KEY=
     
     logging:
       driver: json-file
