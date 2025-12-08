@@ -67,6 +67,8 @@
 					 max-file: "3"
 	 ```
 
+	 > 想启用本地 Bot API、音乐代理或整理器专用目录？可以在启动时追加 `-f deploy/docker-compose.extras.yml`，示例文件涵盖了这些可选组件。
+
 3. **启动与访问**
 	 ```bash
 	 docker compose up -d
@@ -79,8 +81,11 @@
 cd TGmusicBot
 pip install -r requirements.txt
 cp .env.example .env  # 按需填写
+python scripts/preflight_env_check.py  # 可选：检查关键变量是否完整
 ./start.sh
 ```
+
+> 若脚本提示缺少变量，可直接编辑 `.env` 再次执行，确保部署前即捕获配置问题。
 
 ---
 
@@ -124,6 +129,27 @@ cp .env.example .env  # 按需填写
 
 ---
 
+## 🛰️ Emby Webhook 配置示例
+1. Emby → Dashboard → Webhooks → Add → HTTP。
+2. 填写：
+	 - URL: `https://example.com/webhook/emby`
+	 - Method: `POST`
+	 - Body:
+		 ```json
+		 {
+			 "itemName": "{{Name}}",
+			 "event": "{{Event}}",
+			 "mbId": "{{ItemId}}",
+			 "mbUser": "{{UserName}}"
+		 }
+		 ```
+	 - Events: 勾选 `ItemAdded`、`library.new`。
+3. 在 TGmusicbot Web → 设置 → Webhook 中点击“发送测试通知”确认可达性。
+
+> 如果代理/反代层开启了额外认证，记得同步更新 `WEBHOOK_SECRET` 或反代白名单。
+
+---
+
 ## 🔧 进阶特性
 - **大文件上传**：配置 `TG_API_ID` / `TG_API_HASH` 启用 Pyrogram，支持 2GB 文件。
 - **本地 Bot API**：设置 `TELEGRAM_API_URL` 使用自建 Telegram Bot API Server。
@@ -159,6 +185,8 @@ TGmusicbot/
 	- 多项 QQ/网易云下载、元数据、Webhook 队列相关修复。
 
 > 更早的版本记录请查看 GitHub Releases。
+
+👉 查看完整更新轨迹：`CHANGELOG.md`
 
 ---
 
