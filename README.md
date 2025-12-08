@@ -13,21 +13,7 @@
 ---
 
 ## 🚀 Docker 快速部署
-1. **准备目录与变量**
-	 ```bash
-	 mkdir tgmusicbot && cd tgmusicbot
-	 cat > .env <<'EOF'
-	 TELEGRAM_BOT_TOKEN=你的BotToken
-	 ADMIN_USER_ID=你的TelegramID
-	 EMBY_URL=http://你的emby地址:8096
-	 EMBY_USERNAME=emby用户名
-	 EMBY_PASSWORD=emby密码
-	 PLAYLIST_BOT_KEY=随机安全字符串
-	 EOF
-	 ```
-	 > 旧环境仍使用 `TELEGRAM_TOKEN` 也没问题，可同时保留以兼容。
-
-2. **创建 `docker-compose.yml`**
+**创建 `docker-compose.yml`**
 	 ```yaml
 	 services:
 		 tgmusicbot:
