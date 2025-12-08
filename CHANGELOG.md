@@ -3,7 +3,7 @@
 该项目遵循半结构化更新记录：记录功能亮点、重要修复与 Breaking Changes。若需了解更细的提交详情，请参阅 Git 历史或 GitHub Releases。
 
 ## [Unreleased]
-- 规划中的健康检查脚本、部署模板拆分等文档增强。
+- 文档：明确音乐中转必须独立部署，并更新 `deploy/docker-compose.extras.yml` 只保留本地 Bot API / 整理器挂载示例。
 
 ## [1.7.8] - 2024-XX-XX
 ### 新增

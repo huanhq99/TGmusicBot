@@ -7,7 +7,8 @@ services:
       - tg-stack
     environment:
       - TELEGRAM_API_URL=http://telegram-bot-api:8081/bot
-      - MUSIC_PROXY_URL=http://music-proxy:8088
+      # 如果机器人跑在海外，需要指向部署在国内的代理服务
+      - MUSIC_PROXY_URL=${MUSIC_PROXY_URL:-https://your-proxy.example.com}
       - MUSIC_PROXY_KEY=${MUSIC_PROXY_KEY}
     volumes:
       - ./watch:/watch                # 文件整理器监听目录
@@ -28,18 +29,6 @@ services:
     volumes:
       - ./data/telegram-bot-api:/var/lib/telegram-bot-api
     # 建议在外层反代里做 Basic Auth 或 IP 白名单
-
-  music-proxy:
-    image: your-org/music-proxy:latest
-    restart: unless-stopped
-    networks:
-      - tg-stack
-    environment:
-      - MUSIC_PROXY_TOKEN=${MUSIC_PROXY_KEY}
-      - MUSIC_PROXY_UPSTREAM=https://music.163.com
-    ports:
-      - "8088:8088"
-    # 将 TELEGRAM_BOT 的 MUSIC_PROXY_URL 指向该服务
 
 networks:
   tg-stack:

@@ -67,7 +67,7 @@
 					 max-file: "3"
 	 ```
 
-	 > 想启用本地 Bot API、音乐代理或整理器专用目录？可以在启动时追加 `-f deploy/docker-compose.extras.yml`，示例文件涵盖了这些可选组件。
+	 > 想启用本地 Bot API 或给文件整理器单独挂载目录？可以在启动时追加 `-f deploy/docker-compose.extras.yml`。音乐代理仍建议单独在国内机器部署，只需把 `MUSIC_PROXY_URL` 指向该主机即可，无需和机器人放在同一台服务器。
 
 3. **启动与访问**
 	 ```bash
@@ -104,6 +104,8 @@ python scripts/preflight_env_check.py  # 可选：检查关键变量是否完整
 | `EMBY_WEBHOOK_NOTIFY` | 是否启用 Webhook Telegram 推送 (默认 true) | 可选 |
 
 > 更多变量请参考 `docker-compose.yml` 与代码注释。
+
+> 关于音乐中转：机器人部署在海外时，请在国内单独部署代理服务（Clash、sing-box 或自建 API 均可），然后把该机器的公网地址填入 `MUSIC_PROXY_URL`。无需把代理容器和 bot 放在同一 compose 文件里。
 
 ---
 
