@@ -1,42 +1,87 @@
 services:
   tgmusicbot:
     image: huanhq99/tgmusicbot:latest
+    # 或者本地构建: build: .
+
     container_name: tgmusicbot
     restart: unless-stopped
     ports:
-      - "8080:8080"  # Web 管理界面
+      - "8080:8080" # Web 管理界面，左边改成你想要的端口
     volumes:
-      - ./data:/app/data              # 数据库、缓存、日志
-      - ./uploads:/app/uploads        # 下载的音乐文件
-      - /path/to/music:/music         # 整理目标目录（可选）
+      - ./data:/app/data # 数据库、缓存、日志
+      - ./uploads:/app/uploads # 下载的音乐文件
+      - ./watch:/watch # 监控来源目录（自动整理功能用）
+      - ./music:/music # 整理目标目录
+      - ./bot:/app/bot # 挂载源码以便调试
     environment:
       - TZ=Asia/Shanghai
       - DATA_DIR=/app/data
-      - UPLOAD_DIR=/tmp/tgmusicbot_uploads
-      - MUSIC_TARGET_DIR=/app/uploads
-      # Telegram 配置（Bot Token 和管理员 ID）
+      - UPLOAD_DIR=/app/uploads
+      - MUSIC_TARGET_DIR=/music
+
+      # ===== Telegram 配置（必填）=====
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
-      - ADMIN_USER_ID=${ADMIN_USER_ID}
-      # Telegram API 大文件上传支持（可选，可上传超过 20MB 的文件）
-      - TG_API_ID=${TG_API_ID:-}
-      - TG_API_HASH=${TG_API_HASH:-}
-      # Web 管理界面用户名密码
+      - ADMIN_USER_ID=${ADMIN_USER_ID} # 你的 Telegram 用户ID
+      - TG_API_ID=${TG_API_ID:-} # 可选，用于上传大于20MB文件
+      - TG_API_HASH=${TG_API_HASH:-} # 可选，从 my.telegram.org 获取
+      - TELEGRAM_API_URL=${TELEGRAM_API_URL:-} # 可选，本地 Bot API 服务器地址
+
+      # ===== Web 管理界面登录 =====
       - WEB_USERNAME=${WEB_USERNAME:-admin}
-      - WEB_PASSWORD=${WEB_PASSWORD}
-      # Emby 配置
-      - EMBY_URL=${EMBY_URL}
-      - EMBY_USERNAME=${EMBY_USERNAME}
-      - EMBY_PASSWORD=${EMBY_PASSWORD}
-      # Emby 自动扫描间隔（小时，0=禁用）
-      - EMBY_SCAN_INTERVAL=${EMBY_SCAN_INTERVAL:-6}
-      # 加密密钥（自定义）
-      - PLAYLIST_BOT_KEY=${PLAYLIST_BOT_KEY}
-      # QQ音乐国内中转URi KEy
-      - MUSIC_PROXY_URL=
-      - MUSIC_PROXY_KEY=
-    
+      - WEB_PASSWORD=${WEB_PASSWORD} # 必填，设置管理界面密码
+
+      # ===== Emby 配置（可选）=====
+      - EMBY_URL=${EMBY_URL:-} # Emby 服务器地址
+      - EMBY_API_KEY=${EMBY_API_KEY:-} # Emby API 密钥（推荐）或使用用户名密码
+      - EMBY_USERNAME=${EMBY_USERNAME:-}
+      - EMBY_PASSWORD=${EMBY_PASSWORD:-}
+
+      # ===== AI 年度报告摘要（可选）=====
+      # 配置后，年度听歌统计可生成 AI 个性化总结文案
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-} # OpenAI API 密钥
+      - OPENAI_API_URL=${OPENAI_API_URL:-} # 可用第三方兼容API，如 https://api.xxx.com/v1
+      - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4o-mini} # 模型名称
+
+      # ===== 用户系统与邮件服务 =====
+      - ENABLE_USER_REGISTER=${ENABLE_USER_REGISTER:-true} # 是否开放注册
+      # 邮件配置已移至 Web 界面设置
+
+      # ===== 其他 =====
+      - PLAYLIST_BOT_KEY=${PLAYLIST_BOT_KEY:-} # 歌单加密密钥
+
+      # ===== QQ音乐国内中转（可选）=====
+      # 如果服务器在国外无法直接访问QQ音乐，可配置国内中转服务
+      # 需自行部署中转服务，详见项目文档
+      - MUSIC_PROXY_URL=${MUSIC_PROXY_URL:-} # 中转服务地址
+      - MUSIC_PROXY_KEY=${MUSIC_PROXY_KEY:-} # 中转服务密钥
+
+      # ===== Redis 配置 =====
+      - REDIS_URL=redis://redis:6379/0
+      # ===== 网络代理配置（可选，NAS/内网用户需配置）=====
+      # - HTTP_PROXY=http://192.168.1.x:7890
+      # - HTTPS_PROXY=http://192.168.1.x:7890
+      # - NO_PROXY=localhost,127.0.0.1,redis,music.163.com # 不需要代理的域名/服务
+
+    depends_on:
+      - redis
     logging:
       driver: json-file
       options:
-        max-size: "10m"
+        max-size: 10m
         max-file: "3"
+
+  redis:
+    image: redis:7-alpine
+    container_name: tgmusicbot-redis
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    logging:
+      driver: json-file
+      options:
+        max-size: 5m
+        max-file: "2"
+
+volumes:
+  redis_data:

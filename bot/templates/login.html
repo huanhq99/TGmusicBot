@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - TGmusicbot</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 3rem;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .logo-gradient {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .input-field {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 0.875rem 1rem;
+            color: white;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper .input-field {
+            padding-right: 2.5rem;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #9ca3af;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .password-toggle:hover {
+            color: #d1d5db;
+        }
+
+        .btn-login {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            padding: 0.875rem;
+            border-radius: 12px;
+            font-weight: 600;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-login:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .error-msg {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body class="text-white">
+    <div class="login-card">
+        <div class="text-center mb-8">
+            <div
+                class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+                <i class="fas fa-music text-2xl text-white"></i>
+            </div>
+            <h1 class="text-2xl font-bold logo-gradient">TGmusicbot</h1>
+            <p class="text-gray-500 text-sm mt-2">音乐管理后台</p>
+        </div>
+
+        <div id="error-box" class="error-msg hidden"></div>
+
+        <form id="login-form" onsubmit="return handleLogin(event)">
+            <div class="mb-4">
+                <label class="block text-gray-400 text-sm mb-2">用户名</label>
+                <input type="text" name="username" class="input-field" placeholder="admin" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-400 text-sm mb-2">密码</label>
+                <div class="password-wrapper">
+                    <input type="password" name="password" id="password" class="input-field" placeholder="输入密码"
+                        required>
+                    <button type="button" class="password-toggle" onclick="togglePassword()">
+                        <i class="fas fa-eye" id="password-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="mb-6 flex items-center">
+                <input type="checkbox" name="remember_me" id="remember_me"
+                    class="w-4 h-4 rounded border-gray-600 bg-gray-700 text-indigo-600 focus:ring-indigo-500">
+                <label for="remember_me" class="ml-2 text-sm text-gray-400 cursor-pointer">自动登录</label>
+            </div>
+            <button type="submit" class="btn-login" id="login-btn">
+                <i class="fas fa-sign-in-alt mr-2"></i>登录
+            </button>
+
+            <!-- 注册链接 -->
+            <div class="text-center mt-4">
+                <span class="text-gray-500 text-sm">还没有账号？</span>
+                <a href="/register" class="text-indigo-400 hover:text-indigo-300 text-sm ml-1">立即注册</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const input = document.getElementById('password');
+            const icon = document.getElementById('password-icon');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+
+        // 获取 URL 参数
+        const urlParams = new URLSearchParams(window.location.search);
+        const role = urlParams.get('role');
+        const isUserLogin = role === 'user';
+
+        // 初始化页面状态
+        if (isUserLogin) {
+            document.title = '会员登录 - TGmusicbot';
+            document.querySelector('h1').textContent = '会员登录';
+            document.querySelector('p').textContent = 'TGmusicbot 用户中心';
+            document.querySelector('input[name="username"]').placeholder = '输入用户名';
+
+            // 如果是用户登录，不检查管理员登录状态
+        } else {
+            // 管理员登录：检查是否已登录
+            fetch('/api/auth/status')
+                .then(res => res.json())
+                .then(data => {
+                    if (data.logged_in) {
+                        window.location.href = '/';
+                    }
+                });
+        }
+
+        async function handleLogin(e) {
+            e.preventDefault();
+            const form = document.getElementById('login-form');
+            const btn = document.getElementById('login-btn');
+            const errorBox = document.getElementById('error-box');
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>登录中...';
+            errorBox.classList.add('hidden');
+
+            const username = form.querySelector('input[name="username"]').value;
+            const password = form.querySelector('input[name="password"]').value;
+            const rememberMe = form.querySelector('input[name="remember_me"]').checked;
+
+            try {
+                // 1. 先尝试管理员登录
+                const formData = new FormData();
+                formData.append('username', username);
+                formData.append('password', password);
+                formData.append('remember_me', rememberMe);
+
+                const adminRes = await fetch('/api/login', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (adminRes.ok) {
+                    // 管理员登录成功
+                    window.location.href = '/';
+                    return;
+                }
+
+                // 2. 管理员登录失败，尝试普通用户登录
+                const userRes = await fetch('/api/user/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        username: username,
+                        password: password
+                    })
+                });
+
+                const userData = await userRes.json();
+
+                if (userData.code === 200) {
+                    // 普通用户登录成功
+                    window.location.href = '/profile';
+                    return;
+                }
+
+                // 两个登录都失败
+                errorBox.textContent = userData.message || '用户名或密码错误';
+                errorBox.classList.remove('hidden');
+
+            } catch (err) {
+                console.error(err);
+                errorBox.textContent = '网络错误，请重试';
+                errorBox.classList.remove('hidden');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-sign-in-alt mr-2"></i>登录';
+            }
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户注册 - TGmusicbot</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .auth-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 3rem;
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .logo-gradient {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .input-field {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 0.875rem 1rem;
+            color: white;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            padding: 0.875rem;
+            border-radius: 12px;
+            font-weight: 600;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .msg-box {
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .msg-error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+        }
+
+        .msg-success {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: #22c55e;
+        }
+
+        .link-text {
+            color: #6366f1;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .link-text:hover {
+            color: #8b5cf6;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body class="text-white">
+    <div class="auth-card">
+        <div class="text-center mb-8">
+            <div
+                class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+                <i class="fas fa-user-plus text-2xl text-white"></i>
+            </div>
+            <h1 class="text-2xl font-bold logo-gradient">用户注册</h1>
+            <p class="text-gray-500 text-sm mt-2">创建您的账号</p>
+        </div>
+
+        <div id="msg-box" class="msg-box hidden"></div>
+
+        <form id="register-form" onsubmit="return handleRegister(event)">
+            <div class="mb-4">
+                <label class="block text-gray-400 text-sm mb-2">用户名</label>
+                <input type="text" name="username" id="username" class="input-field" placeholder="3-20个字符" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-400 text-sm mb-2">密码</label>
+                <input type="password" name="password" id="password" class="input-field" placeholder="至少6个字符" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-400 text-sm mb-2">确认密码</label>
+                <input type="password" name="password2" id="password2" class="input-field" placeholder="再次输入密码"
+                    required>
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-400 text-sm mb-2">邮箱 <span class="text-gray-600">(可选)</span></label>
+                <input type="email" name="email" id="email" class="input-field" placeholder="用于找回密码">
+            </div>
+
+            <button type="submit" class="btn-primary" id="submit-btn">
+                <i class="fas fa-user-plus mr-2"></i>注册
+            </button>
+        </form>
+
+        <div class="text-center mt-6 text-gray-400 text-sm">
+            已有账号？<a href="/user/login" class="link-text">立即登录</a>
+        </div>
+    </div>
+
+    <script>
+        async function handleRegister(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            const msgBox = document.getElementById('msg-box');
+
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            const password2 = document.getElementById('password2').value;
+            const email = document.getElementById('email').value.trim();
+
+            // 验证
+            if (password !== password2) {
+                showMsg('两次输入的密码不一致', 'error');
+                return false;
+            }
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>注册中...';
+            msgBox.classList.add('hidden');
+
+            try {
+                const res = await fetch('/api/user/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password, email: email || null })
+                });
+
+                const data = await res.json();
+
+                if (data.code === 200) {
+                    showMsg('注册成功！正在跳转登录页面...', 'success');
+                    setTimeout(() => {
+                        window.location.href = '/user/login';
+                    }, 1500);
+                } else {
+                    showMsg(data.message || '注册失败', 'error');
+                }
+            } catch (err) {
+                showMsg('网络错误，请重试', 'error');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-user-plus mr-2"></i>注册';
+            }
+
+            return false;
+        }
+
+        function showMsg(text, type) {
+            const msgBox = document.getElementById('msg-box');
+            msgBox.textContent = text;
+            msgBox.className = 'msg-box msg-' + type;
+            msgBox.classList.remove('hidden');
+        }
+    </script>
+</body>
+
+</html>

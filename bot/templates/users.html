@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+
+{% block title %}用户管理 - TGmusicbot{% endblock %}
+
+{% block content %}
+<div class="mb-8">
+    <h2 class="text-2xl font-bold mb-1">用户管理</h2>
+    <p class="text-gray-500">管理站点注册用户</p>
+</div>
+
+<!-- 统计 -->
+<div class="glass-card p-6 mb-8">
+    <div class="flex items-center gap-6">
+        <div
+            class="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+            <i class="fas fa-users text-2xl text-white"></i>
+        </div>
+        <div>
+            <p class="text-4xl font-bold" id="user-count">--</p>
+            <p class="text-gray-500">注册用户总数</p>
+        </div>
+    </div>
+</div>
+
+<!-- 用户列表 -->
+<div class="glass-card overflow-hidden">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>用户名</th>
+                <th>Telegram</th>
+                <th>Emby 账户</th>
+                <th>到期时间</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="user-table">
+            <tr>
+                <td colspan="6" class="text-center text-gray-500 py-12">
+                    <i class="fas fa-spinner fa-spin mr-2"></i>加载中...
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    async function loadUsers() {
+        try {
+            const res = await fetch('/api/users');
+            const data = await res.json();
+            const tbody = document.getElementById('user-table');
+
+            document.getElementById('user-count').textContent = data.length;
+
+            if (data.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="6" class="empty-state">
+                            <i class="fas fa-user-plus"></i>
+                            <p>暂无注册用户</p>
+                            <p class="text-sm mt-2">用户可通过 /reg 命令获取注册链接</p>
+                        </td>
+                    </tr>`;
+                return;
+            }
+
+            tbody.innerHTML = data.map((u, i) => {
+                const colors = [
+                    'from-blue-500 to-cyan-500',
+                    'from-purple-500 to-pink-500',
+                    'from-green-500 to-teal-500',
+                    'from-orange-500 to-yellow-500',
+                    'from-red-500 to-pink-500'
+                ];
+                const colorClass = colors[i % colors.length];
+                const initial = (u.username || 'U').charAt(0).toUpperCase();
+
+                // Telegram 绑定状态
+                const tgHtml = u.telegram_id
+                    ? `<code class="text-xs bg-blue-900 bg-opacity-30 px-2 py-1 rounded">${u.telegram_id}</code>`
+                    : '<span class="text-gray-500 text-sm">未绑定</span>';
+
+                // Emby 绑定状态
+                const embyHtml = u.emby_username
+                    ? `<span class="text-green-400"><i class="fas fa-check-circle mr-1"></i>${u.emby_username}</span>`
+                    : '<span class="text-gray-500 text-sm">未绑定</span>';
+
+                // 到期时间
+                let expireHtml = '<span class="text-gray-500">永久</span>';
+                if (u.expire_at) {
+                    const expireDate = new Date(u.expire_at);
+                    const now = new Date();
+                    if (expireDate < now) {
+                        expireHtml = `<span class="text-red-400"><i class="fas fa-times-circle mr-1"></i>已过期</span>`;
+                    } else {
+                        const days = Math.ceil((expireDate - now) / (1000 * 60 * 60 * 24));
+                        expireHtml = `<span class="text-green-400">${expireDate.toLocaleDateString()} (${days}天)</span>`;
+                    }
+                }
+
+                // 状态
+                const statusHtml = u.is_active
+                    ? '<span class="text-green-400"><i class="fas fa-check-circle mr-1"></i>正常</span>'
+                    : '<span class="text-red-400"><i class="fas fa-ban mr-1"></i>禁用</span>';
+
+                return `
+                <tr>
+                    <td>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br ${colorClass} flex items-center justify-center shadow-lg text-white font-bold">
+                                ${initial}
+                            </div>
+                            <div>
+                                <p class="font-medium">${u.username}</p>
+                                <p class="text-xs text-gray-500">${u.role === 'admin' ? '管理员' : '普通用户'}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>${tgHtml}</td>
+                    <td>${embyHtml}</td>
+                    <td>${expireHtml}</td>
+                    <td>${statusHtml}</td>
+                    <td>
+                        <div class="flex gap-2">
+                            <button onclick="toggleUserStatus(${u.id}, ${u.is_active})" class="px-2 py-1 text-xs ${u.is_active ? 'bg-orange-600 bg-opacity-20 text-orange-400' : 'bg-green-600 bg-opacity-20 text-green-400'} rounded hover:opacity-80">
+                                ${u.is_active ? '禁用' : '启用'}
+                            </button>
+                            <button onclick="deleteUser(${u.id}, '${u.username}')" class="px-2 py-1 text-xs bg-red-600 bg-opacity-20 text-red-400 rounded hover:opacity-80">
+                                删除
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `}).join('');
+        } catch (e) {
+            console.error('加载失败:', e);
+            document.getElementById('user-table').innerHTML = `
+                <tr>
+                    <td colspan="6" class="text-center text-red-400 py-8">
+                        加载失败: ${e.message}
+                    </td>
+                </tr>`;
+        }
+    }
+
+    async function toggleUserStatus(userId, currentStatus) {
+        try {
+            const res = await fetch(`/api/users/${userId}/toggle_status`, { method: 'POST' });
+            if (res.ok) {
+                loadUsers();
+            } else {
+                alert('操作失败');
+            }
+        } catch (e) {
+            alert('操作失败: ' + e.message);
+        }
+    }
+
+    async function deleteUser(userId, username) {
+        if (!confirm(`确定要删除用户 ${username} 吗？\n\n此操作不可恢复！`)) return;
+
+        try {
+            const res = await fetch(`/api/users/${userId}`, { method: 'DELETE' });
+            if (res.ok) {
+                loadUsers();
+            } else {
+                alert('删除失败');
+            }
+        } catch (e) {
+            alert('删除失败: ' + e.message);
+        }
+    }
+
+    loadUsers();
+</script>
+{% endblock %}

@@ -1,0 +1,1325 @@
+2025-12-03 05:44:19,740 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 05:44:20,330 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 05:44:20,861 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 05:44:21,685 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 05:44:22,862 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 05:44:24,831 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 05:44:28,343 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 05:44:35,055 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 05:44:48,194 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 05:45:14,122 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 05:46:05,673 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 05:47:06,179 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 05:48:06,501 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 05:49:06,996 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 05:50:07,425 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 05:51:07,928 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 05:52:08,259 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:52:37,995 - __main__ - INFO - 数据库初始化完成: /Users/huanhq/Desktop/TGmusicbot/data/bot.db
+2025-12-03 13:52:40,322 - __main__ - ERROR - Emby 认证失败: 401 Client Error: Unauthorized for url: https://music.huan.im/emby/Users/AuthenticateByName?format=json
+2025-12-03 13:52:40,323 - __main__ - CRITICAL - Emby 认证失败！
+2025-12-03 05:53:08,697 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 05:54:09,001 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 05:55:09,446 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 05:56:09,769 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 05:57:10,083 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:58:08,543 - __main__ - INFO - 数据库初始化完成: /Users/huanhq/Desktop/TGmusicbot/data/bot.db
+2025-12-03 13:58:09,932 - __main__ - INFO - Emby 认证成功: zlh
+2025-12-03 13:58:09,933 - __main__ - INFO - 首次启动，扫描媒体库...
+2025-12-03 13:58:09,933 - __main__ - INFO - 开始扫描 Emby 媒体库...
+2025-12-03 05:58:10,504 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:58:11,561 - __main__ - INFO - 已扫描 2000 首歌曲...
+2025-12-03 13:58:12,607 - __main__ - INFO - 已扫描 4000 首歌曲...
+2025-12-03 13:58:13,936 - __main__ - INFO - 已扫描 6000 首歌曲...
+2025-12-03 13:58:15,018 - __main__ - INFO - 已扫描 8000 首歌曲...
+2025-12-03 13:58:16,272 - __main__ - INFO - 已扫描 10000 首歌曲...
+2025-12-03 13:58:17,532 - __main__ - INFO - 已扫描 12000 首歌曲...
+2025-12-03 13:58:18,797 - __main__ - INFO - 已扫描 14000 首歌曲...
+2025-12-03 13:58:20,129 - __main__ - INFO - 已扫描 16000 首歌曲...
+2025-12-03 13:58:21,377 - __main__ - INFO - 已扫描 18000 首歌曲...
+2025-12-03 13:58:22,695 - __main__ - INFO - 已扫描 20000 首歌曲...
+2025-12-03 13:58:23,842 - __main__ - INFO - 已扫描 22000 首歌曲...
+2025-12-03 13:58:25,302 - __main__ - INFO - 已扫描 24000 首歌曲...
+2025-12-03 13:58:26,524 - __main__ - INFO - 已扫描 26000 首歌曲...
+2025-12-03 13:58:27,782 - __main__ - INFO - 已扫描 28000 首歌曲...
+2025-12-03 13:58:29,050 - __main__ - INFO - 已扫描 30000 首歌曲...
+2025-12-03 13:58:29,900 - __main__ - INFO - 已扫描 30455 首歌曲...
+2025-12-03 13:58:29,900 - __main__ - INFO - 扫描完成，共 30455 首歌曲
+2025-12-03 13:58:29,988 - __main__ - INFO - 缓存已保存: /Users/huanhq/Desktop/TGmusicbot/data/library_cache.json
+2025-12-03 13:58:30,097 - __main__ - INFO - Bot 启动成功！
+2025-12-03 13:58:35,304 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getMe "HTTP/1.1 200 OK"
+2025-12-03 13:58:35,591 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/deleteWebhook "HTTP/1.1 200 OK"
+2025-12-03 13:58:35,595 - telegram.ext.Application - INFO - Application started
+2025-12-03 13:58:47,301 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 13:58:57,743 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 13:59:08,186 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 05:59:10,958 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:59:18,632 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 13:59:19,839 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 13:59:21,725 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/sendMessage "HTTP/1.1 200 OK"
+2025-12-03 13:59:30,158 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 13:59:36,693 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 13:59:42,906 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 13:59:53,347 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:00:03,790 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:00:11,284 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:00:12,888 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:00:23,332 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:00:33,777 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:00:44,221 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:00:53,603 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:01:04,063 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:01:11,750 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:01:14,509 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:01:24,953 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:01:25,396 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:01:25,977 - __main__ - ERROR - Emby 认证失败: 401 Client Error: Unauthorized for url: https://music.huan.im/emby/Users/AuthenticateByName?format=json
+2025-12-03 14:01:27,864 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/sendMessage "HTTP/1.1 200 OK"
+2025-12-03 14:01:36,313 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:01:46,757 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:01:57,199 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:02:07,641 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:02:12,123 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:02:18,086 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:02:28,534 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:02:38,994 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:02:49,442 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:02:59,885 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:03:10,328 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:03:12,449 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:03:20,774 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:03:31,216 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:03:41,670 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:03:52,113 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:04:02,560 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:04:12,774 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:04:13,012 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:04:23,453 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:04:31,149 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:04:32,493 - __main__ - INFO - Emby 认证成功: zlh
+2025-12-03 14:04:34,452 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/sendMessage "HTTP/1.1 200 OK"
+2025-12-03 14:04:42,881 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:04:53,327 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:05:03,774 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:05:13,243 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:05:14,216 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:05:24,667 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:05:35,112 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:05:45,560 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:05:56,004 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:06:06,450 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:06:13,548 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:06:14,713 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:06:15,350 - __main__ - INFO - 短链接 'https://163cn.tv/V94tVRK' 解析为 'https://music.163.com/playlist?app_version=9.4.21&id=417146426&userid=300897934&dlt=0846&creatorId=300897934'
+2025-12-03 14:06:17,251 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/sendMessage "HTTP/1.1 200 OK"
+2025-12-03 14:06:21,294 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:06:21,918 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-12-03 14:06:22,563 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/editMessageText "HTTP/1.1 200 OK"
+2025-12-03 14:06:23,113 - __main__ - INFO - 短链接 'https://163cn.tv/V94tVRK' 解析为 'https://music.163.com/playlist?app_version=9.4.21&id=417146426&userid=300897934&dlt=0846&creatorId=300897934'
+2025-12-03 14:06:23,702 - __main__ - INFO - Emby 认证成功: zlh
+2025-12-03 14:06:23,703 - __main__ - INFO - 处理 NCM 歌单: 417146426
+2025-12-03 14:06:25,154 - __main__ - INFO - 匹配 881 首歌曲 (模式: 完全匹配)...
+2025-12-03 14:06:25,164 - __main__ - INFO - 匹配完成: 0 成功, 881 失败
+2025-12-03 14:06:25,792 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/sendMessage "HTTP/1.1 200 OK"
+2025-12-03 14:06:31,737 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:06:42,190 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:06:52,636 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:07:03,078 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:07:13,521 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:07:13,975 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:07:23,968 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:07:34,414 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:07:44,859 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:07:55,307 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:08:05,751 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:08:14,309 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:08:16,199 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:08:26,642 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:08:37,091 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:08:47,534 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:08:57,982 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:09:08,436 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:09:14,786 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:09:15,169 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:09:15,170 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-12-03 14:09:15,171 - telegram.ext.Application - INFO - Application.stop() complete
+2025-12-03 06:10:15,265 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:11:15,581 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:12:15,925 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:13:16,243 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:14:16,521 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:15:16,815 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:15:50,598 - __main__ - INFO - 数据库初始化完成: /Users/huanhq/Desktop/TGmusicbot/data/bot.db
+2025-12-03 14:15:52,384 - __main__ - INFO - Emby 认证成功: zlh
+2025-12-03 14:15:52,428 - __main__ - INFO - 从缓存加载 30455 首歌曲
+2025-12-03 14:15:52,480 - __main__ - INFO - Bot 启动成功！
+2025-12-03 14:15:53,974 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getMe "HTTP/1.1 200 OK"
+2025-12-03 14:15:54,272 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/deleteWebhook "HTTP/1.1 200 OK"
+2025-12-03 14:15:54,275 - telegram.ext.Application - INFO - Application started
+2025-12-03 14:15:55,951 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:15:56,596 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/sendMessage "HTTP/1.1 200 OK"
+2025-12-03 14:16:06,402 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:16:16,835 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:16:17,257 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:16:27,271 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:16:35,017 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:16:37,081 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-12-03 14:16:37,650 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/editMessageText "HTTP/1.1 200 OK"
+2025-12-03 14:16:38,077 - __main__ - INFO - Emby 认证成功: zlh
+2025-12-03 14:16:38,077 - __main__ - INFO - 处理 NCM 歌单: 417146426
+2025-12-03 14:16:39,625 - __main__ - INFO - 匹配 881 首歌曲 (模式: 完全匹配)...
+2025-12-03 14:16:39,632 - __main__ - INFO - 匹配完成: 717 成功, 164 失败
+2025-12-03 14:16:45,031 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/sendMessage "HTTP/1.1 200 OK"
+2025-12-03 14:16:45,347 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:16:55,800 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:17:06,233 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:17:16,668 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:17:17,701 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:17:27,115 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:17:37,592 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:17:48,031 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:17:58,473 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:18:08,909 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:18:18,169 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:18:19,345 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:18:29,778 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:18:40,212 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:18:50,650 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:19:01,089 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:19:11,528 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:19:18,515 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:19:21,962 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:19:32,398 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:19:42,866 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:19:53,276 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:20:03,708 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:20:14,152 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:20:18,923 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:20:24,584 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:20:35,017 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:20:45,453 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:20:55,891 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:21:06,325 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:21:16,760 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:21:19,224 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:21:27,193 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:21:37,633 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:21:48,080 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:21:58,515 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:22:08,951 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:22:19,381 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:22:19,709 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:22:29,824 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:22:40,261 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:22:50,696 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:23:01,128 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:23:11,563 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:23:20,033 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:23:21,995 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:23:32,428 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:23:42,861 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:23:53,313 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:24:03,748 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:24:14,182 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:24:20,370 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:24:24,617 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:24:35,051 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:24:45,483 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:24:55,918 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:25:06,352 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:25:16,789 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:25:20,682 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:25:27,221 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:25:37,655 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:25:48,093 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:25:58,528 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:26:08,962 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:26:19,394 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:26:20,975 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:26:29,830 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:26:40,264 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:26:50,696 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:27:01,130 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:27:11,566 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:27:21,291 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:27:21,998 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:27:32,435 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:27:42,872 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:27:53,304 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:28:03,742 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:28:14,174 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:28:21,580 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:28:24,609 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:28:35,044 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:28:45,483 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:28:55,917 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:29:06,348 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:29:16,783 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:29:21,907 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:29:27,217 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:29:37,656 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:29:48,094 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:29:58,527 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:30:08,959 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:30:19,392 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:30:22,300 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:30:29,828 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:30:40,260 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:30:50,691 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:31:01,123 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:31:11,556 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:31:21,990 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:31:22,645 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:31:32,443 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:31:42,875 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:31:53,307 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:32:03,740 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:32:14,172 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:32:22,948 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:32:24,608 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:32:35,041 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:32:45,474 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:32:55,908 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:33:06,346 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:33:18,074 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:33:23,407 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:33:28,504 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:33:38,956 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:33:49,386 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:33:59,814 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:34:10,241 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:34:20,669 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 06:34:23,752 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:34:31,094 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:34:37,055 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 14:34:37,056 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-12-03 14:34:37,060 - telegram.ext.Application - INFO - Application.stop() complete
+2025-12-03 06:35:24,050 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:36:24,373 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:37:24,697 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:38:25,010 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:39:25,435 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:40:25,750 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:41:26,057 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:42:26,367 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:43:26,683 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:44:26,980 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:45:27,337 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:46:27,625 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:47:27,905 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:48:28,173 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:49:28,564 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:50:28,862 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:51:29,153 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:52:29,429 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:53:29,708 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:54:30,020 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:55:30,338 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:56:30,713 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:57:31,106 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:58:31,404 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 06:59:31,737 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:00:32,044 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:01:32,393 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:02:32,703 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:03:32,986 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:04:33,346 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:05:33,676 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:06:34,064 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:07:34,440 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:08:34,763 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:09:35,206 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:10:35,495 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:11:35,950 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:12:36,288 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:13:36,762 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:14:37,077 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:15:37,548 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:16:37,886 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:17:38,278 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:18:38,720 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:19:39,038 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:20:39,378 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:21:39,747 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:22:40,039 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:23:40,413 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:24:40,738 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:25:41,223 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:26:41,517 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:27:41,829 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:28:42,156 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:29:42,512 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:30:42,911 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:31:43,343 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:32:43,674 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:33:44,073 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:34:44,451 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:35:44,796 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:36:45,145 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:37:45,493 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:38:45,812 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:39:46,211 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:40:46,530 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:41:46,900 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:42:47,198 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:43:47,535 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:44:47,853 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:45:48,176 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:46:48,640 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:47:49,106 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:48:49,468 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:49:49,831 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:50:50,187 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:51:50,594 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:52:50,904 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:53:51,188 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:54:51,494 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:55:51,803 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:56:52,129 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:57:52,436 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:58:52,863 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 07:59:53,230 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:00:53,704 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:01:54,175 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:02:54,470 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:03:54,934 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:04:55,419 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:04:59,809 - __main__ - INFO - 数据库初始化完成: /Users/huanhq/Desktop/TGmusicbot/data/bot.db
+2025-12-03 16:05:01,207 - __main__ - INFO - Emby 认证成功: zlh
+2025-12-03 16:05:01,246 - __main__ - INFO - 从缓存加载 30455 首歌曲
+2025-12-03 16:05:01,296 - __main__ - INFO - Bot 启动成功！
+2025-12-03 16:05:02,863 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getMe "HTTP/1.1 200 OK"
+2025-12-03 16:05:03,158 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/deleteWebhook "HTTP/1.1 200 OK"
+2025-12-03 16:05:03,162 - telegram.ext.Application - INFO - Application started
+2025-12-03 16:05:14,860 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 16:05:22,313 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8585075323:AAEFscZUi-f7sxUzw2OIjGyTyYXq4dLJ7BQ/getUpdates "HTTP/1.1 200 OK"
+2025-12-03 16:05:22,315 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-12-03 16:05:22,316 - telegram.ext.Application - INFO - Application.stop() complete
+2025-12-03 08:05:55,863 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:06:56,333 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:07:56,722 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:08:57,110 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:09:57,514 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:10:57,908 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:11:58,286 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:12:58,685 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:13:59,009 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:14:59,374 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:15:59,672 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:16:59,995 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:18:00,366 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:19:00,701 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:20:01,183 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:21:01,468 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:22:01,754 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:23:02,093 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:24:02,407 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:25:02,734 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:26:03,031 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:27:03,343 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:28:03,650 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:29:03,982 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:30:04,495 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:31:04,844 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:32:05,149 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:33:05,412 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:34:05,696 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:35:05,995 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:36:06,275 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:37:06,559 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:38:06,842 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:39:07,183 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:40:07,481 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:41:07,799 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:42:08,153 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:43:08,500 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:44:08,862 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:45:09,140 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:46:09,583 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:47:09,897 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:48:10,282 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:49:10,592 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:50:11,092 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:51:11,403 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:52:11,750 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:53:12,058 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:54:12,434 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:55:12,768 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:56:13,091 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:57:13,533 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:58:13,862 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 08:59:14,161 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:00:14,514 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:01:14,870 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:02:15,297 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:03:15,619 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:04:15,975 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:05:16,375 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:06:16,704 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:07:17,119 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:08:17,425 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:09:17,841 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:10:18,222 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:11:18,643 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:12:18,935 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:13:19,269 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:14:19,701 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:15:19,986 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:16:20,287 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:17:20,594 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:18:20,918 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:19:21,283 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:20:21,610 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:21:21,932 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:22:22,270 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:23:22,588 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:24:22,981 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:25:23,299 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:26:23,717 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:27:24,055 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:28:24,412 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:29:24,765 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:30:25,198 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:31:25,533 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:32:25,939 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:33:26,276 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:34:26,591 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:35:27,005 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:36:27,341 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:37:27,655 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:38:28,259 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:39:29,808 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:40:30,113 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:41:30,532 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:42:30,833 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:43:31,126 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:44:31,427 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:45:31,736 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:46:32,022 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:47:32,489 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:48:32,875 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:49:33,250 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:50:33,583 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:51:33,914 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:52:34,268 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:53:34,660 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:54:34,956 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:55:35,276 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:56:35,567 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:57:35,877 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:58:36,189 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 09:59:36,535 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:00:36,953 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:01:37,273 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:02:37,635 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:03:37,992 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:04:38,321 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:05:38,654 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:06:38,979 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:07:39,342 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:08:39,721 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:09:40,067 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:10:40,528 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:11:41,018 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:12:41,321 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:13:41,730 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:14:42,220 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:15:42,957 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:16:43,469 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:17:44,041 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:18:44,627 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:19:45,114 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:20:45,482 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:21:45,892 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:22:46,393 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:23:46,758 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:24:47,183 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:25:47,586 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:26:48,044 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:27:48,562 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:28:49,085 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:29:49,458 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:30:49,894 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:31:50,321 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:32:50,992 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:33:51,739 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:34:52,192 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:35:52,668 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:36:53,305 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:37:53,876 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:38:54,270 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:39:54,808 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:40:55,349 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:41:55,871 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:42:56,275 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:43:56,752 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:44:57,258 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:45:57,708 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:46:58,008 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:47:58,456 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:48:58,833 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:49:59,315 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:50:59,947 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:52:00,467 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:53:01,012 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:54:01,468 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:55:01,965 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:56:02,420 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:57:02,914 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:58:03,395 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 10:59:03,933 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:00:04,444 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:01:05,050 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:02:05,513 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:03:05,815 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:04:06,246 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:05:06,607 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:06:07,106 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:07:07,625 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:08:08,137 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:09:08,573 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:10:09,079 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:11:09,467 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:12:09,961 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:13:10,456 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:14:10,997 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:15:11,513 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:16:12,005 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:17:12,317 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:18:12,818 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:19:13,162 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:20:13,656 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:21:14,357 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:22:14,928 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:23:15,513 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:24:16,056 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:25:16,575 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:26:17,024 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:27:17,442 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:28:17,931 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:29:18,328 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:30:18,920 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:31:19,496 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:32:20,009 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:33:20,366 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:34:20,859 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:35:21,217 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:36:21,759 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:37:22,120 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:38:22,584 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:39:22,975 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:40:23,500 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:41:23,944 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:42:24,323 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:43:24,732 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:44:25,259 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:45:25,588 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:46:25,984 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:47:26,359 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:48:26,915 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:49:27,544 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:50:28,362 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:51:28,845 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:52:29,287 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:53:29,732 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:54:30,250 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:55:30,576 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:56:30,915 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:57:31,203 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:58:31,516 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 11:59:32,121 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:00:32,448 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:01:32,760 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:02:33,049 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:03:33,342 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:04:33,765 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:05:34,172 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:06:34,717 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:07:35,101 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:08:35,604 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:09:35,948 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:10:36,297 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:11:36,816 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:12:37,425 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:13:37,774 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:14:38,118 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:15:38,431 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:16:38,912 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:17:39,272 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:18:39,576 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:19:39,886 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:20:40,206 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:21:40,532 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:22:41,028 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:23:41,390 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:24:41,762 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:25:42,095 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:26:42,411 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:27:42,776 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:28:43,166 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:29:43,588 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:30:43,900 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:31:44,195 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:32:44,543 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:33:44,854 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:34:45,148 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:35:45,441 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:36:45,746 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:37:46,046 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:38:46,328 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:39:46,652 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:40:46,939 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:41:47,232 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:42:47,668 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:43:47,970 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:44:48,327 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:45:48,784 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:46:49,289 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:47:49,703 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:48:50,485 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:49:50,978 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:50:51,469 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:51:51,851 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:52:52,337 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:53:52,840 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:54:53,323 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:55:53,804 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:56:54,408 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:57:55,056 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:58:55,460 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 12:59:55,850 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:00:56,474 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:01:56,921 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:02:57,275 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:03:57,571 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:04:57,904 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:05:58,283 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:06:58,705 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:07:59,411 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:09:00,043 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:10:00,552 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:11:00,927 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:12:01,431 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:13:02,062 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:14:02,577 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:15:03,078 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:16:03,520 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:17:03,986 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:18:04,532 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:19:05,137 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:20:05,647 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:21:06,093 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:22:06,587 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:23:07,058 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:24:07,613 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:25:08,317 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:26:08,801 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:27:09,464 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:28:10,036 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:29:10,603 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:30:11,173 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:31:14,479 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:32:15,167 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:33:15,648 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:34:16,278 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:35:16,806 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:36:17,327 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:37:17,665 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:38:18,119 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:39:18,541 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:40:18,960 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:41:19,285 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:42:19,778 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:43:20,124 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:44:20,603 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:45:21,075 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:46:21,550 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:47:21,925 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:48:22,409 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:49:22,797 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:50:23,284 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:51:23,625 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:52:24,203 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:53:24,723 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:54:25,298 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:55:25,780 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:56:26,234 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:57:26,752 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:58:27,270 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 13:59:27,734 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:00:28,219 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:01:28,518 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:02:29,145 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:03:29,599 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:04:30,125 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:05:30,583 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:06:31,206 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:07:31,546 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:08:31,871 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:09:32,200 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:10:32,681 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:11:33,048 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:12:33,528 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:13:34,088 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:14:34,595 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:15:35,206 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:16:35,777 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:17:36,145 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:18:36,607 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:19:37,128 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:20:37,632 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:21:38,009 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:22:38,552 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:23:38,870 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:24:39,500 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:25:40,094 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:26:40,717 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:27:41,174 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:28:41,720 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:29:42,243 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:30:42,770 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:31:43,338 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:32:43,909 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:33:44,494 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:34:45,152 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:35:45,784 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:36:46,467 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:37:46,997 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:38:47,552 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:39:48,143 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:40:48,710 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:41:49,192 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:42:49,645 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:43:50,066 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:44:50,444 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:45:50,921 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:46:51,365 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:47:51,874 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:48:52,463 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:49:52,998 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:50:53,343 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:51:53,799 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:52:54,512 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:53:55,062 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:54:55,646 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:55:56,240 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:56:56,802 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:57:57,334 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:58:57,942 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 14:59:58,482 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:00:59,035 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:01:59,544 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:03:00,157 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:04:00,667 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:05:01,231 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:06:01,762 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:07:02,434 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:08:02,809 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:09:03,188 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:10:03,732 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:11:04,118 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:12:04,433 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:13:04,990 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:14:14,839 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:15:28,404 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:16:54,854 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:18:08,339 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:19:21,861 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:20:36,085 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:22:01,574 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:23:02,909 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:24:31,758 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:43:07,099 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:44:07,501 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:45:07,851 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:46:08,219 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:47:08,585 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:48:08,916 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:49:09,255 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:50:09,602 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:51:09,919 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:52:10,339 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:53:10,657 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:54:10,989 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:55:11,300 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:56:11,612 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:57:12,013 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:58:12,340 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 15:59:12,819 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:00:13,181 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:01:13,560 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:02:13,916 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:03:14,256 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:04:14,578 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:05:15,049 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:06:15,375 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:07:15,783 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:08:16,113 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:09:16,469 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:10:16,852 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:11:17,188 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:12:17,554 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:13:17,981 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:14:18,315 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:15:18,734 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:16:19,094 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:17:19,515 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:18:19,876 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:19:20,182 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:20:20,509 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:21:20,872 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:22:21,230 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:23:21,593 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:24:21,968 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:25:22,313 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:26:22,632 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:27:22,967 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:28:23,360 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:29:23,681 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:30:23,997 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:31:24,308 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:32:24,670 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:33:25,003 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:34:25,335 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:35:25,663 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:36:26,016 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:37:26,327 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:38:26,657 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:39:27,005 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:40:27,382 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:41:27,722 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:42:28,106 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:43:28,547 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:44:28,942 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:45:29,360 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:46:29,677 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:47:29,979 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:48:30,270 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:49:30,713 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:50:31,124 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:51:31,413 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:52:31,863 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:53:32,203 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:54:32,535 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:55:32,869 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:56:33,183 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:57:33,624 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:58:33,967 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 16:59:34,166 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:00:34,526 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:01:34,854 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:02:35,261 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:03:35,617 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:04:35,942 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:05:36,252 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:06:36,561 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:07:36,931 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:08:37,387 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:09:37,719 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:10:38,028 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:11:38,346 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:12:38,755 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:13:39,175 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:14:39,544 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:15:39,911 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:16:40,279 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:17:40,615 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:18:41,024 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:19:41,362 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:20:41,685 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:21:42,002 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:22:42,407 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:23:42,714 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:24:43,029 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:25:43,472 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:26:43,797 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:27:44,102 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:28:44,474 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:29:44,815 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:30:45,209 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:31:45,573 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:32:45,895 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:33:46,221 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:34:46,548 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:35:46,844 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:36:47,274 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:37:47,581 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:38:47,910 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:39:48,263 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:40:48,584 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:41:48,931 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:42:49,258 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:43:49,734 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:44:50,078 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:45:50,550 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:46:50,889 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:47:51,335 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:48:51,659 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:49:51,993 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:50:52,348 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:51:52,687 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:52:53,147 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:53:53,631 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:54:53,946 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:55:54,261 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:56:54,658 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:57:54,947 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:58:55,304 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 17:59:55,731 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:00:56,054 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:01:56,386 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:02:56,722 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:03:57,049 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:04:57,430 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:05:57,719 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:06:58,061 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:07:58,416 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:08:58,765 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:09:59,130 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:10:59,475 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:11:59,785 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:13:00,180 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:14:00,521 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:15:00,848 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:16:01,247 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:17:01,580 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:18:01,891 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:19:02,198 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:20:02,513 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:21:02,910 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:22:03,239 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:23:03,561 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:24:03,875 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:25:04,189 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:26:04,480 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:27:04,899 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:28:05,227 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:29:05,529 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:30:05,843 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:31:06,194 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:32:06,560 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:33:06,903 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:34:07,219 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:35:07,569 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:36:07,866 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:37:08,161 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:38:08,554 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:39:08,887 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:40:09,200 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:41:09,503 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:42:09,808 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:43:10,320 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:44:10,640 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:45:11,061 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:46:11,391 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:47:11,753 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:48:12,084 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:49:12,557 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:50:12,894 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:51:13,249 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:52:13,573 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:53:13,863 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:54:14,205 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:55:14,535 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:56:14,983 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:57:15,290 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:58:15,606 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 18:59:15,948 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:00:16,364 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:01:16,691 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:02:17,010 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:03:17,352 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:04:17,674 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:05:18,025 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:06:18,447 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:07:18,776 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:08:19,144 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:09:19,497 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:10:19,813 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:11:20,123 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:12:20,428 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:13:20,825 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:14:21,270 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:15:21,701 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:16:22,070 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:17:22,480 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:18:22,902 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:19:23,234 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:20:23,604 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:21:23,910 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:22:24,328 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:23:24,697 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:24:25,054 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:25:25,381 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:26:25,700 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:27:26,106 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:28:26,573 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:29:26,931 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:30:27,477 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:31:27,837 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:32:28,234 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:33:28,601 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:34:28,926 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:35:29,393 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:36:29,718 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:37:30,041 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:38:30,397 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:39:30,734 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:40:31,088 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:41:31,423 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:42:31,725 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:43:32,088 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:44:32,538 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:45:33,000 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:46:33,408 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:47:33,731 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:48:34,224 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:49:34,561 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:50:34,916 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:51:35,231 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:52:35,643 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:53:35,990 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:54:36,282 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:55:36,623 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:56:36,937 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:57:37,246 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:58:37,534 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 19:59:38,009 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:00:38,431 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:01:38,761 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:02:39,205 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:03:39,535 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:04:39,997 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:05:40,304 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:06:40,613 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:07:40,911 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:08:41,361 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:09:41,678 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:10:41,999 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:11:42,345 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:12:42,673 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:13:43,020 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:14:43,534 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:15:43,872 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:16:44,204 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:17:44,530 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:18:44,868 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:19:45,378 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:20:45,696 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:21:46,038 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:22:46,367 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:23:46,668 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:24:47,013 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:25:47,385 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:26:47,730 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:27:48,057 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:28:48,387 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:29:48,710 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:30:49,071 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:31:49,440 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:32:49,780 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:33:50,129 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:34:50,459 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:35:50,780 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:36:51,157 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:37:51,505 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:38:51,846 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:39:52,167 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:40:52,487 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:41:52,829 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:42:53,310 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:43:53,662 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:44:54,127 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:45:54,467 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:46:54,832 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:47:55,253 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:48:55,557 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:49:55,956 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:50:56,416 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:51:56,741 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:52:57,044 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:53:57,406 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:54:57,719 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:55:58,069 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:56:58,401 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:57:58,710 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:58:59,002 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 20:59:59,462 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:00:59,819 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:02:00,156 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:03:00,639 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:04:00,968 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:05:01,438 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:06:01,762 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:07:02,094 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:08:02,434 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:09:02,756 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:10:03,129 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:11:03,548 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:12:03,877 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:13:04,214 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:14:04,547 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:15:04,972 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:16:05,307 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:17:05,680 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:18:05,992 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:19:06,299 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:20:06,613 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:21:07,066 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:22:07,414 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:23:07,830 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:24:08,152 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:25:08,480 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:26:08,831 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:27:09,168 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:28:09,470 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:29:09,935 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:30:10,261 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:31:10,617 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:32:10,928 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:33:11,239 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:34:11,582 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:35:11,918 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:36:12,227 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:37:12,537 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:38:12,859 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:39:13,311 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:40:13,647 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:41:13,965 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:42:14,295 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:43:14,631 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:44:15,093 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:45:15,573 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:46:15,930 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:47:16,360 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:48:16,693 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:49:17,061 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:50:17,480 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:51:17,792 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:52:18,139 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:53:18,481 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:54:18,817 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:55:19,262 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:56:19,577 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:57:19,906 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:58:20,238 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 21:59:20,590 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:00:20,960 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:01:21,274 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:02:21,594 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:03:21,887 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:04:22,210 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:05:22,537 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:06:22,887 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:07:23,234 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:08:23,561 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:09:23,963 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:10:24,310 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:11:24,724 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:12:25,039 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:13:25,481 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:14:25,806 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:15:26,253 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:16:26,565 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:17:26,952 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:18:27,272 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:19:27,579 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:20:27,837 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:21:28,202 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:22:28,581 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:23:28,913 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:24:29,220 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:25:29,522 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:26:29,843 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:27:30,223 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:28:30,580 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:29:30,885 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:30:31,185 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:31:31,524 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:32:31,846 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:33:32,225 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:34:32,527 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:35:32,829 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:36:33,130 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:37:33,489 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:38:33,845 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:39:34,179 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:40:34,491 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:41:34,828 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:42:35,152 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:43:35,564 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:44:35,976 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:45:36,362 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:46:36,722 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:47:37,094 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:48:37,420 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:49:37,819 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:50:38,289 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:51:38,628 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:52:38,917 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:53:39,238 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:54:39,636 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:55:39,995 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:56:40,314 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:57:40,635 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:58:40,951 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 22:59:41,328 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:00:41,760 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:01:42,089 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:02:42,404 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:03:42,786 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:04:43,115 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:05:43,492 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:06:43,828 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:07:44,157 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:08:44,533 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:09:44,839 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:10:45,148 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:11:45,542 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:12:45,859 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:13:46,242 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:14:46,723 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:15:47,102 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:16:47,594 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:17:47,926 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:18:48,238 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:19:48,531 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:20:48,969 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:21:49,316 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:22:49,805 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:23:50,159 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:24:50,499 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:25:50,831 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:26:51,170 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:27:51,515 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:28:51,842 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:29:52,206 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:30:52,672 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:31:53,017 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:32:53,354 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:33:53,724 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:34:54,143 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:35:54,498 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:36:54,816 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:37:55,114 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:38:55,483 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:39:55,823 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:40:56,171 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:41:56,522 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:42:56,846 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:43:57,320 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:44:57,736 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:45:58,101 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:46:58,420 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:47:58,749 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:48:59,153 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:49:59,521 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:51:00,021 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:52:00,349 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:53:00,887 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:54:01,229 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:55:01,537 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:56:01,824 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:57:02,167 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:58:02,472 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！
+2025-12-03 23:59:02,759 - __main__ - CRITICAL - 缺少 TELEGRAM_TOKEN 环境变量！

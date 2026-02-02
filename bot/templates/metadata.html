@@ -1,0 +1,871 @@
+{% extends "base.html" %}
+
+{% block title %}音乐元数据 - TGmusicbot{% endblock %}
+
+{% block content %}
+<style>
+    /* 
+     * Metadata Editor - Clean Modern Design
+     * Inherits base.html variables but overrides for specific "clean" look
+     */
+
+    /* Layout */
+    .metadata-container {
+        display: flex;
+        gap: 0;
+        height: calc(100vh - 40px);
+        margin: 20px;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--glass-shadow);
+        backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px);
+        overflow: hidden;
+    }
+
+    /* Sidebar (File Browser) */
+    .file-sidebar {
+        width: 320px;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid var(--glass-border);
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="light"] .file-sidebar {
+        background: #f8fafc;
+        border-right-color: #e2e8f0;
+    }
+
+    .sidebar-header {
+        padding: 1rem;
+        border-bottom: 1px solid var(--border-color);
+        flex-shrink: 0;
+    }
+
+    .file-list {
+        flex: 1;
+        overflow-y: auto;
+        padding: 0.5rem;
+    }
+
+    .file-item {
+        padding: 0.6rem 0.8rem;
+        margin-bottom: 2px;
+        border-radius: 6px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--text-secondary);
+        transition: all 0.2s;
+        font-size: 0.85rem;
+    }
+
+    .file-item:hover {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--text-primary);
+    }
+
+    .file-item.active {
+        background: rgba(99, 102, 241, 0.15);
+        border: 1px solid rgba(99, 102, 241, 0.3);
+        color: #fff;
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+        backdrop-filter: blur(5px);
+    }
+
+    .file-item.folder {
+        color: #fbbf24;
+    }
+
+    .file-item.audio {
+        color: var(--text-secondary);
+    }
+
+    /* Main Editor Area */
+    .editor-main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background: transparent;
+    }
+
+    [data-theme="light"] .editor-main {
+        background: #ffffff;
+    }
+
+    /* Toolbar setup */
+    .editor-toolbar {
+        padding: 1.5rem 2.5rem;
+        border-bottom: 1px solid var(--glass-border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    .toolbar-actions {
+        display: flex;
+        gap: 1rem;
+    }
+
+    /* Editor Content Layout */
+    .editor-content {
+        flex: 1;
+        padding: 2rem;
+        display: flex;
+        gap: 3rem;
+        overflow-y: auto;
+    }
+
+    /* Left Column */
+    .editor-left {
+        width: 300px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .cover-wrapper {
+        width: 300px;
+        height: 300px;
+        border-radius: 12px;
+        background: var(--bg-tertiary);
+        border: 1px solid var(--border-color);
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    [data-theme="light"] .cover-wrapper {
+        background: #f1f5f9;
+        border-color: #e2e8f0;
+    }
+
+    .cover-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .cover-placeholder {
+        font-size: 3rem;
+        color: var(--text-muted);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .file-tech-info {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 1rem;
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    /* Right Column: Fields */
+    .editor-right {
+        flex: 1;
+        max-width: 800px;
+    }
+
+    /* Clean Input Fields */
+    .field-group {
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+
+    .field-label {
+        display: block;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--text-muted);
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+    }
+
+    .clean-input {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--glass-border);
+        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
+        color: var(--text-primary);
+        transition: all 0.3s ease;
+        border-radius: 12px;
+    }
+
+    .clean-input:focus {
+        outline: none;
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(99, 102, 241, 0.5);
+        box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+    }
+
+    .clean-input::placeholder {
+        color: var(--text-muted);
+        opacity: 0.6;
+    }
+
+    /* Config Inputs in Sidebar - Refined */
+    .sidebar-input {
+        width: 100%;
+        background: transparent;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+        color: var(--text-primary);
+        transition: border-color 0.2s;
+    }
+
+    .sidebar-input:focus {
+        border-color: var(--primary);
+        outline: none;
+        background: rgba(var(--bg-primary-rgb), 0.05);
+    }
+
+    [data-theme="dark"] .sidebar-input {
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    [data-theme="dark"] .sidebar-input:focus {
+        border-color: var(--primary);
+    }
+
+    /* Search Modal Override */
+    .modal-clean .modal-content {
+        border-radius: 16px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        border: none;
+    }
+
+    .search-result-item {
+        display: flex;
+        padding: 1rem;
+        gap: 1rem;
+        border-bottom: 1px solid var(--border-color);
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .search-result-item:hover {
+        background: var(--bg-tertiary);
+    }
+
+    .search-result-item.selected {
+        background: rgba(99, 102, 241, 0.1);
+        border-left: 3px solid var(--primary);
+    }
+
+    .nice-scrollbar::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .nice-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .nice-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+    }
+
+    [data-theme="dark"] .nice-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Missing Base Modal Styles */
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 50;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(4px);
+    }
+
+    .modal.show {
+        display: flex;
+    }
+</style>
+
+<div class="metadata-container">
+    <!-- 侧边栏：文件列表 + 整理工具（保留折叠功能） -->
+    <div class="file-sidebar">
+        <!-- 头部：搜索与导航 -->
+        <div class="sidebar-header">
+            <div class="relative">
+                <i class="fas fa-search absolute left-3 top-2.5 text-gray-400 text-xs"></i>
+                <input type="text" id="dir-search" placeholder="搜索文件..."
+                    class="w-full pl-8 pr-4 py-1.5 rounded-md bg-opacity-10 bg-black dark:bg-white dark:bg-opacity-5 border border-transparent focus:border-indigo-500 text-xs transition-all"
+                    style="background: rgba(127,127,127,0.1);">
+            </div>
+            <!-- Breadcrumb -->
+            <div id="dir-nav" class="mt-3 flex items-center text-xs text-gray-500 overflow-hidden whitespace-nowrap">
+                <span class="cursor-pointer hover:text-indigo-500" onclick="loadDir('parent')"><i
+                        class="fas fa-level-up-alt mr-1"></i> 上一级</span>
+                <span class="mx-2 opacity-50">|</span>
+                <span id="current-path-display" class="truncate opacity-75">/</span>
+            </div>
+        </div>
+
+        <!-- 列表 -->
+        <div id="dir-list" class="file-list nice-scrollbar">
+            <div class="text-center p-8 text-gray-400 text-sm">加载中...</div>
+        </div>
+
+        <!-- 底部：文件整理面板 (折叠式) - Cleaner Style -->
+        <div class="border-t border-gray-200 dark:border-white/5">
+            <details class="group" id="organize-panel" open>
+                <summary
+                    class="list-none flex items-center justify-between p-3 cursor-pointer text-xs font-bold text-gray-600 dark:text-gray-400 hover:text-indigo-500 select-none">
+                    <span class="flex items-center gap-2"><i class="fas fa-folder-open"></i> 文件整理</span>
+                    <span class="transition-transform group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                </summary>
+
+                <div class="px-3 pb-3 space-y-3 text-xs">
+                    <div>
+                        <label class="block text-gray-400 mb-1 scale-95 origin-left">目标目录</label>
+                        <input type="text" id="organize-target-dir" class="sidebar-input" placeholder="/music">
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-400 mb-1 scale-95 origin-left">结构模板</label>
+                        <select id="organize-template" class="sidebar-input appearance-none">
+                            <option value="{album_artist}/{album}">艺术家/专辑</option>
+                            <option value="{artist}/{year} - {album}">艺术家/年份 - 专辑</option>
+                            <option value="{genre}/{artist}/{album}">流派/艺术家/专辑</option>
+                        </select>
+                    </div>
+
+                    <div class="flex items-center justify-between pt-1">
+                        <div class="flex items-center gap-2">
+                            <input type="checkbox" id="auto-organize-toggle"
+                                class="rounded border-gray-300 text-indigo-500 focus:ring-indigo-500 w-3 h-3">
+                            <label for="auto-organize-toggle" class="text-gray-500 select-none">自动整理</label>
+                        </div>
+                        <button id="btn-save-organize" onclick="saveOrganizeConfig()"
+                            class="text-indigo-500 hover:text-indigo-600" title="保存设置"><i
+                                class="fas fa-save"></i></button>
+                    </div>
+
+                    <button onclick="startOrganize()"
+                        class="w-full py-1.5 border border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white rounded text-xs font-bold transition flex items-center justify-center gap-1 group-btn">
+                        <i class="fas fa-play text-[10px]"></i> 一键整理当前目录
+                    </button>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <!-- 主编辑区 -->
+    <div class="editor-main">
+        <!-- 工具栏 -->
+        <div class="editor-toolbar">
+            <div class="flex items-center gap-4">
+                <h2 class="text-lg font-bold truncate max-w-xs text-gray-800 dark:text-white" id="current-filename">
+                    未选择文件</h2>
+            </div>
+
+            <div class="toolbar-actions">
+                <!-- 搜索/匹配按钮 -->
+                <div class="flex rounded-lg overflow-hidden border border-opacity-10 border-gray-500 shadow-sm">
+                    <select id="source-select"
+                        class="px-3 py-2 bg-transparent text-sm border-r border-opacity-10 border-gray-500 outline-none text-gray-600 dark:text-gray-300">
+                        <option value="auto">自动源</option>
+                        <option value="netease">网易云</option>
+                        <option value="qq">QQ音乐</option>
+                    </select>
+                    <button id="btn-search"
+                        class="px-4 py-2 bg-transparent hover:bg-gray-100 dark:hover:bg-white/5 transition text-sm flex items-center gap-2 text-gray-700 dark:text-gray-200">
+                        <i class="fas fa-magic text-indigo-500"></i> 智能匹配
+                    </button>
+                </div>
+
+                <button id="btn-save"
+                    class="btn-primary flex items-center gap-2 shadow-lg shadow-indigo-500/30 text-sm font-bold px-5"
+                    disabled onclick="saveMetadata()">
+                    <i class="fas fa-save"></i> 保存修改
+                </button>
+            </div>
+        </div>
+
+        <div id="editor-area" class="editor-content hidden">
+            <!-- 左侧：封面与信息 -->
+            <div class="editor-left">
+                <div class="cover-wrapper group" id="cover-box">
+                    <div class="cover-placeholder">
+                        <i class="fas fa-compact-disc opacity-20"></i>
+                        <span class="text-xs opacity-40 font-normal">暂无封面</span>
+                    </div>
+                </div>
+
+                <div class="file-tech-info">
+                    <div class="flex justify-between">
+                        <span>格式</span>
+                        <span id="info-format" class="font-mono font-bold">FLAC</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>比特率</span>
+                        <span id="info-bitrate" class="font-mono">1000kbps</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>时长</span>
+                        <span id="info-duration" class="font-mono">03:45</span>
+                    </div>
+                </div>
+
+                <div class="bg-indigo-50 dark:bg-opacity-5 p-4 rounded-xl border border-indigo-100 dark:border-white/5">
+                    <div class="text-xs text-indigo-500 font-bold uppercase mb-2">信息完整度</div>
+                    <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                        <div id="completeness-bar" class="h-full bg-indigo-500 w-0 transition-all duration-500"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧：字段表单 -->
+            <div class="editor-right">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
+                    <div class="field-group col-span-2">
+                        <label class="field-label">标题 (Title)</label>
+                        <input type="text" id="meta-title" class="clean-input font-bold text-lg" placeholder="输入标题...">
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">艺术家 (Artist)</label>
+                        <input type="text" id="meta-artist" class="clean-input" placeholder="输入艺术家...">
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">专辑 (Album)</label>
+                        <input type="text" id="meta-album" class="clean-input" placeholder="输入专辑名称...">
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">专辑艺术家 (Album Artist)</label>
+                        <input type="text" id="meta-album-artist" class="clean-input" placeholder="同艺术家...">
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">年份 (Year)</label>
+                        <input type="text" id="meta-year" class="clean-input" placeholder="例如: 2023">
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">音轨号 (Track)</label>
+                        <input type="text" id="meta-track" class="clean-input" placeholder="例如: 1">
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">流派 (Genre)</label>
+                        <input type="text" id="meta-genre" class="clean-input" placeholder="例如: Pop">
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">歌词 (Lyrics)</label>
+                        <textarea id="meta-lyrics" class="clean-input" rows="6" placeholder="歌词内容..."
+                            style="resize: vertical; font-size: 12px; line-height: 1.5;"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 空状态 -->
+        <div id="empty-state" class="flex-1 flex flex-col items-center justify-center text-gray-400">
+            <i class="fas fa-compact-disc text-6xl mb-4 opacity-20"></i>
+            <p>从左侧选择一个文件开始编辑</p>
+        </div>
+    </div>
+</div>
+
+<!-- Search Modal -->
+<div class="modal modal-clean" id="search-modal">
+    <div class="modal-content bg-white dark:bg-gray-900 w-full max-w-3xl">
+        <div class="modal-header border-b border-gray-100 dark:border-gray-800 p-4 flex justify-between items-center">
+            <h3 class="font-bold text-lg">在线匹配元数据</h3>
+            <button onclick="closeModal('search-modal')" class="text-gray-400 hover:text-gray-600"><i
+                    class="fas fa-times"></i></button>
+        </div>
+        <div class="p-4 bg-gray-50 dark:bg-black/20 border-b border-gray-100 dark:border-gray-800">
+            <div class="relative">
+                <input type="text" id="modal-search-input"
+                    class="w-full pl-10 pr-4 py-3 rounded-xl border-none shadow-sm focus:ring-2 ring-indigo-500"
+                    placeholder="输入关键词搜索...">
+                <i class="fas fa-search absolute left-4 top-3.5 text-gray-400"></i>
+                <button onclick="performSearch()"
+                    class="absolute right-2 top-2 px-4 py-1.5 bg-indigo-500 text-white rounded-lg text-sm">搜索</button>
+            </div>
+        </div>
+        <div class="modal-body p-0 h-96 overflow-y-auto" id="search-results"></div>
+        <div
+            class="p-4 border-t border-gray-100 dark:border-gray-800 flex justify-end gap-3 bg-gray-50 dark:bg-black/20">
+            <button class="px-4 py-2 text-gray-500 hover:text-gray-700" onclick="closeModal('search-modal')">取消</button>
+            <button
+                class="px-4 py-2 bg-indigo-500 text-white rounded-lg shadow-lg hover:bg-indigo-600 disabled:opacity-50"
+                id="btn-apply-direct">
+                <i class="fas fa-bolt mr-2"></i> 立即应用
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentPath = '';
+    let currentFile = null;
+    let selectedResult = null;
+    let parentPath = '';
+
+    // --- File Browser Logic ---
+    async function loadDir(path = '') {
+        try {
+            const apiPath = path === 'parent' ? (parentPath || '') : path;
+            const res = await fetch('/api/metadata/browse?path=' + encodeURIComponent(apiPath));
+            const data = await res.json();
+            currentPath = data.current;
+            parentPath = data.parent;
+
+            document.getElementById('current-path-display').textContent = currentPath || '/';
+
+            const list = document.getElementById('dir-list');
+            list.innerHTML = '';
+
+            (data.items || []).forEach(item => {
+                const el = document.createElement('div');
+                el.className = `file-item ${item.is_dir ? 'folder' : 'audio'}`;
+                el.innerHTML = `
+                    <i class="fas ${item.is_dir ? 'fa-folder' : 'fa-music'}"></i>
+                    <span class="flex-1 truncate">${item.name}</span>
+                `;
+                el.onclick = () => item.is_dir ? loadDir(item.path) : loadFile(item.path, el);
+                list.appendChild(el);
+            });
+
+            if (!data.items || !data.items.length) {
+                list.innerHTML = '<div class="text-center p-8 text-gray-400 text-sm">空目录</div>';
+            }
+        } catch (e) {
+            console.error(e);
+            document.getElementById('dir-list').innerHTML = '<div class="text-center p-8 text-red-500 text-sm">加载失败</div>';
+        }
+    }
+
+    // --- File Loader ---
+    async function loadFile(path, el) {
+        currentFile = path;
+
+        document.querySelectorAll('.file-item').forEach(e => e.classList.remove('active'));
+        if (el) el.classList.add('active');
+
+        document.getElementById('empty-state').classList.add('hidden');
+        document.getElementById('editor-area').classList.remove('hidden');
+        document.getElementById('btn-save').disabled = true;
+
+        document.getElementById('current-filename').textContent = path.split('/').pop();
+
+        try {
+            const res = await fetch('/api/metadata/detail?path=' + encodeURIComponent(path));
+            const data = await res.json();
+
+            if (data.error) throw new Error(data.error);
+
+            const fields = ['title', 'artist', 'album', 'album_artist', 'year', 'track', 'genre'];
+            fields.forEach(f => {
+                const id = 'meta-' + f.replace('_', '-');
+                const el = document.getElementById(id);
+                if (el) el.value = data[f] || '';
+            });
+
+            // 歌词单独处理（textarea）
+            const lyricsEl = document.getElementById('meta-lyrics');
+            if (lyricsEl) lyricsEl.value = data.lyrics || '';
+
+            document.getElementById('info-format').textContent = (data.format || 'UNK').toUpperCase();
+            document.getElementById('info-bitrate').textContent = Math.round(data.bitrate / 1000) + 'kbps';
+            const mins = Math.floor(data.duration / 60);
+            const secs = String(Math.floor(data.duration % 60)).padStart(2, '0');
+            document.getElementById('info-duration').textContent = `${mins}:${secs}`;
+
+            const score = data.completeness?.score || 0;
+            document.getElementById('completeness-bar').style.width = score + '%';
+            document.getElementById('completeness-bar').className = `h-full transition-all duration-500 ${score > 80 ? 'bg-green-500' : (score > 50 ? 'bg-yellow-500' : 'bg-red-500')}`;
+
+            renderCover(data.cover_data);
+
+            document.getElementById('btn-save').disabled = false;
+
+        } catch (e) {
+            alert('读取失败: ' + e.message);
+        }
+    }
+
+    function renderCover(base64Data) {
+        const box = document.getElementById('cover-box');
+        if (base64Data) {
+            box.innerHTML = `<img src="data:image/jpeg;base64,${base64Data}" class="absolute inset-0 w-full h-full object-cover">`;
+        } else {
+            box.innerHTML = `
+                <div class="cover-placeholder">
+                    <i class="fas fa-compact-disc opacity-20"></i>
+                    <span class="text-xs opacity-40 font-normal">暂无封面</span>
+                </div>`;
+        }
+    }
+
+    // --- Search Logic ---
+    document.getElementById('btn-search').addEventListener('click', () => {
+        if (!currentFile) { alert('请先选择文件'); return; }
+
+        const title = document.getElementById('meta-title').value;
+        const artist = document.getElementById('meta-artist').value;
+        const filename = document.getElementById('current-filename').textContent;
+        const query = (title && artist) ? `${title} ${artist}` : filename.replace(/\.[^/.]+$/, "");
+
+        document.getElementById('modal-search-input').value = query;
+        document.getElementById('search-modal').classList.add('show');
+        performSearch();
+    });
+
+    async function performSearch() {
+        const query = document.getElementById('modal-search-input').value;
+        const source = document.getElementById('source-select').value;
+        const resultContainer = document.getElementById('search-results');
+
+        resultContainer.innerHTML = '<div class="p-8 text-center text-gray-400"><i class="fas fa-spinner fa-spin"></i> 搜索中...</div>';
+
+        try {
+            const res = await fetch('/api/metadata/search', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query, source, type: 'song' })
+            });
+            const data = await res.json();
+
+            if (!data.results || !data.results.length) {
+                resultContainer.innerHTML = '<div class="p-8 text-center text-gray-400">未找到结果</div>';
+                return;
+            }
+
+            resultContainer.innerHTML = '';
+            data.results.forEach(r => {
+                const el = document.createElement('div');
+                el.className = 'search-result-item';
+                el.innerHTML = `
+                    <img src="${r.cover_url || 'https://via.placeholder.com/60'}" class="w-12 h-12 rounded object-cover bg-gray-200" referrerpolicy="no-referrer">
+                    <div class="flex-1">
+                        <div class="font-bold text-sm text-gray-800 dark:text-gray-200">${r.title}</div>
+                        <div class="text-xs text-gray-500">${r.artist} - ${r.album}</div>
+                        <div class="mt-1 flex gap-2">
+                             <span class="text-[10px] px-1.5 py-0.5 rounded ${r.source === 'netease' ? 'bg-red-100 text-red-600' : 'bg-green-100 text-green-600'}">
+                                ${r.source === 'netease' ? '网易' : 'QQ'}
+                             </span>
+                        </div>
+                    </div>
+                `;
+                el.onclick = () => {
+                    document.querySelectorAll('.search-result-item').forEach(x => x.classList.remove('selected'));
+                    el.classList.add('selected');
+                    selectedResult = r;
+                };
+                resultContainer.appendChild(el);
+            });
+
+        } catch (e) {
+            resultContainer.innerHTML = `<div class="p-8 text-center text-red-500">错误: ${e.message}</div>`;
+        }
+    }
+
+    document.getElementById('btn-apply-direct').addEventListener('click', async () => {
+        if (!selectedResult) return alert('请先选择一个结果');
+        const btn = document.getElementById('btn-apply-direct');
+
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 处理中...';
+
+        try {
+            const res = await fetch('/api/tools/apply_metadata', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    file_path: currentFile,
+                    song_id: String(selectedResult.id),
+                    source: selectedResult.source || 'ncm'
+                })
+            });
+            const data = await res.json();
+            if (data.code === 200) {
+                closeModal('search-modal');
+                loadFile(currentFile);
+            } else {
+                alert('失败: ' + data.message);
+            }
+        } catch (e) {
+            alert('错误: ' + e.message);
+        }
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-bolt mr-2"></i> 立即应用';
+    });
+
+    // --- Save Logic ---
+    async function saveMetadata() {
+        if (!currentFile) return;
+        const btn = document.getElementById('btn-save');
+        const oldText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+        btn.disabled = true;
+
+        const metadata = {
+            title: document.getElementById('meta-title').value,
+            artist: document.getElementById('meta-artist').value,
+            album: document.getElementById('meta-album').value,
+            album_artist: document.getElementById('meta-album-artist').value,
+            year: document.getElementById('meta-year').value,
+            track: document.getElementById('meta-track').value,
+            genre: document.getElementById('meta-genre').value
+        };
+
+        try {
+            const res = await fetch('/api/metadata/update', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    path: currentFile,
+                    metadata,
+                    cover_url: null,
+                    save_cover_file: false
+                })
+            });
+            const data = await res.json();
+            if (data.success) {
+                btn.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => { btn.innerHTML = '<i class="fas fa-save"></i> 保存修改'; btn.disabled = false; }, 1000);
+                loadFile(currentFile);
+            } else {
+                alert('保存失败');
+                btn.disabled = false;
+                btn.innerHTML = oldText;
+            }
+        } catch (e) {
+            alert('保存失败');
+            btn.disabled = false;
+            btn.innerHTML = oldText;
+        }
+    }
+
+    // --- Organize Logic ---
+    async function loadOrganizeConfig() {
+        try {
+            const res = await fetch('/api/config');
+            const data = await res.json();
+            // Data mapping based on get_config return
+            document.getElementById('organize-target-dir').value = data.organize_dir || '/music';
+            document.getElementById('organize-template').value = data.organize_template || '{album_artist}/{album}';
+            document.getElementById('auto-organize-toggle').checked = data.organize_monitor_enabled;
+        } catch (e) { console.error('Load config failed', e); }
+    }
+
+    async function saveOrganizeConfig() {
+        const btn = document.getElementById('btn-save-organize');
+        const oldHtml = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+
+        const payload = {
+            organize_target_dir: document.getElementById('organize-target-dir').value,
+            organize_template: document.getElementById('organize-template').value,
+            organize_monitor_enabled: document.getElementById('auto-organize-toggle').checked
+        };
+
+        try {
+            const res = await fetch('/api/settings/save', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            const data = await res.json();
+
+            if (data.status === 'ok') {
+                btn.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => { btn.innerHTML = oldHtml; }, 1500);
+            } else {
+                alert('保存失败: ' + (data.error || data.detail || '未知错误'));
+                btn.innerHTML = oldHtml;
+            }
+        } catch (e) {
+            alert('请求错误: ' + e);
+            btn.innerHTML = oldHtml;
+        }
+    }
+
+    async function startOrganize() {
+        const btn = document.querySelector('.group-btn');
+        const old = btn.innerHTML;
+        btn.disabled = true;
+
+        try {
+            // 先统计文件数量
+            btn.innerHTML = '<i class="fas fa-search"></i> 统计中...';
+            const previewRes = await fetch('/api/tools/organize_preview', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ source_dir: currentPath || '/' })
+            });
+            const previewData = await previewRes.json();
+
+            if (previewData.count === 0) {
+                alert('没有找到音频文件');
+                return;
+            }
+
+            // 显示文件数量并开始整理
+            btn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> 整理 ${previewData.count} 个文件...`;
+
+            const res = await fetch('/api/tools/organize_current_dir', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ source_dir: currentPath || '/' })
+            });
+            const data = await res.json();
+
+            if (data.code === 200) {
+                alert(data.message);
+                loadDir(currentPath);  // 刷新列表
+            } else {
+                alert('整理失败: ' + data.message);
+            }
+        } catch (e) {
+            alert('请求失败: ' + e.message);
+        } finally {
+            btn.innerHTML = old;
+            btn.disabled = false;
+        }
+    }
+
+    function closeModal(id) {
+        document.getElementById(id).classList.remove('show');
+    }
+
+    // Initial Load
+    loadDir('');
+    loadOrganizeConfig();
+
+    // 搜索逻辑：本地过滤当前目录
+    document.getElementById('dir-search').addEventListener('input', function () {
+        const query = this.value.toLowerCase().trim();
+        document.querySelectorAll('#dir-list .file-item').forEach(el => {
+            const name = el.textContent.toLowerCase();
+            el.style.display = (query === '' || name.includes(query)) ? '' : 'none';
+        });
+    });
+</script>
+{% endblock %}

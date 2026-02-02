@@ -1,0 +1,713 @@
+{% extends "base.html" %}
+
+{% block title %}下载统计 - TGmusicbot{% endblock %}
+
+{% block content %}
+<div class="mb-8">
+    <h2 class="text-2xl font-bold mb-1">下载统计</h2>
+    <p class="text-gray-500">查看下载历史和统计数据</p>
+</div>
+
+<!-- 今日统计卡片 -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
+    <div class="stat-card blue p-5 animate-fade-in delay-1">
+        <div class="flex items-center justify-between">
+            <div>
+                <p class="text-gray-400 text-sm mb-1">今日下载</p>
+                <p class="stat-value text-2xl" id="today-total">--</p>
+            </div>
+            <div class="stat-icon" style="width:48px;height:48px;font-size:20px;">
+                <i class="fas fa-download"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="stat-card green p-5 animate-fade-in delay-2">
+        <div class="flex items-center justify-between">
+            <div>
+                <p class="text-gray-400 text-sm mb-1">成功</p>
+                <p class="stat-value text-2xl" id="today-success">--</p>
+            </div>
+            <div class="stat-icon" style="width:48px;height:48px;font-size:20px;">
+                <i class="fas fa-check-circle"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="stat-card pink p-5 animate-fade-in delay-3">
+        <div class="flex items-center justify-between">
+            <div>
+                <p class="text-gray-400 text-sm mb-1">失败</p>
+                <p class="stat-value text-2xl" id="today-failed">--</p>
+            </div>
+            <div class="stat-icon" style="width:48px;height:48px;font-size:20px;">
+                <i class="fas fa-times-circle"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="stat-card purple p-5 animate-fade-in delay-4">
+        <div class="flex items-center justify-between">
+            <div>
+                <p class="text-gray-400 text-sm mb-1">总大小</p>
+                <p class="stat-value text-2xl" id="today-size">--</p>
+            </div>
+            <div class="stat-icon" style="width:48px;height:48px;font-size:20px;">
+                <i class="fas fa-hdd"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="stat-card orange p-5 animate-fade-in delay-4">
+        <div class="flex items-center justify-between">
+            <div>
+                <p class="text-gray-400 text-sm mb-1">成功率</p>
+                <p class="stat-value text-2xl" id="today-rate">--%</p>
+            </div>
+            <div class="stat-icon" style="width:48px;height:48px;font-size:20px;">
+                <i class="fas fa-percentage"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 图表区域 -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+    <!-- 7天下载趋势 -->
+    <div class="glass-card p-6">
+        <h3 class="font-semibold mb-4 flex items-center gap-2">
+            <i class="fas fa-chart-line text-blue-400"></i>
+            7日下载趋势
+        </h3>
+        <div style="height: 200px; position: relative;">
+            <canvas id="weeklyChart"></canvas>
+        </div>
+    </div>
+
+    <!-- 平台分布 -->
+    <div class="glass-card p-6">
+        <h3 class="font-semibold mb-4 flex items-center gap-2">
+            <i class="fas fa-chart-pie text-purple-400"></i>
+            平台分布
+        </h3>
+        <div class="flex items-center justify-center" style="height: 200px; position: relative;">
+            <canvas id="platformChart"></canvas>
+        </div>
+        <div class="flex justify-center gap-6 mt-4">
+            <div class="flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <span class="text-sm text-gray-400">网易云</span>
+                <span class="text-sm font-semibold" id="ncm-count">0</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                <span class="text-sm text-gray-400">QQ音乐</span>
+                <span class="text-sm font-semibold" id="qq-count">0</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cookie 状态 -->
+<div class="glass-card p-6 mb-8">
+    <h3 class="font-semibold mb-4 flex items-center gap-2">
+        <i class="fas fa-cookie-bite text-yellow-400"></i>
+        Cookie 状态
+    </h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="flex items-center justify-between p-4 rounded-lg" style="background: var(--card-bg);">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 rounded-lg bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
+                    <i class="fas fa-cloud text-white"></i>
+                </div>
+                <div>
+                    <p class="font-medium">网易云音乐</p>
+                    <p class="text-xs text-gray-500" id="ncm-nickname">未登录</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-xs px-2 py-1 rounded-full" id="ncm-status">检测中...</span>
+            </div>
+        </div>
+        <div class="flex items-center justify-between p-4 rounded-lg" style="background: var(--card-bg);">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
+                    <i class="fab fa-qq text-white"></i>
+                </div>
+                <div>
+                    <p class="font-medium">QQ音乐</p>
+                    <p class="text-xs text-gray-500" id="qq-nickname">未登录</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-xs px-2 py-1 rounded-full" id="qq-status">检测中...</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 下载历史 -->
+<div class="glass-card p-6">
+    <div class="flex items-center justify-between mb-4">
+        <h3 class="font-semibold flex items-center gap-2">
+            <i class="fas fa-history text-green-400"></i>
+            下载历史
+        </h3>
+        <div class="flex items-center gap-2">
+            <button class="btn-secondary text-sm" id="retry-failed-btn" onclick="showRetryModal()" title="批量重试失败的下载">
+                <i class="fas fa-redo mr-1"></i>重试失败
+            </button>
+            <select class="select-modern text-sm" id="platform-filter" onchange="loadHistory()">
+                <option value="">全部平台</option>
+                <option value="NCM">网易云</option>
+                <option value="QQ">QQ音乐</option>
+            </select>
+            <select class="select-modern text-sm" id="status-filter" onchange="loadHistory()">
+                <option value="">全部状态</option>
+                <option value="completed">成功</option>
+                <option value="failed">失败</option>
+            </select>
+        </div>
+    </div>
+    <div class="overflow-x-auto">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>歌曲</th>
+                    <th>歌手</th>
+                    <th>平台</th>
+                    <th>大小</th>
+                    <th>状态</th>
+                    <th>时间</th>
+                </tr>
+            </thead>
+            <tbody id="history-tbody">
+                <tr>
+                    <td colspan="6" class="text-center text-gray-500 py-8">
+                        <i class="fas fa-spinner fa-spin mr-2"></i>加载中...
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 分页 -->
+    <div class="flex items-center justify-between mt-4">
+        <p class="text-sm text-gray-500">
+            共 <span id="total-count">0</span> 条记录
+        </p>
+        <div class="flex items-center gap-2">
+            <button class="pagination-btn" id="prev-btn" onclick="prevPage()" disabled>
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <span class="text-sm px-3" id="page-info">1 / 1</span>
+            <button class="pagination-btn" id="next-btn" onclick="nextPage()" disabled>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- 批量重试模态框 -->
+<div id="retry-modal" class="modal hidden">
+    <div class="modal-backdrop" onclick="closeRetryModal()"></div>
+    <div class="modal-content glass-card p-6" style="max-width: 600px; max-height: 80vh; overflow-y: auto;">
+        <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-semibold">
+                <i class="fas fa-redo text-orange-400 mr-2"></i>批量重试失败的下载
+            </h3>
+            <button onclick="closeRetryModal()" class="text-gray-400 hover:text-white">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="mb-4">
+            <label class="text-sm text-gray-400">时间范围</label>
+            <select class="select-modern w-full mt-1" id="retry-days" onchange="loadFailedSongs()">
+                <option value="1">最近 1 天</option>
+                <option value="3">最近 3 天</option>
+                <option value="7" selected>最近 7 天</option>
+                <option value="14">最近 14 天</option>
+                <option value="30">最近 30 天</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-sm text-gray-400">失败的歌曲 (<span id="failed-count">0</span>)</span>
+                <label class="flex items-center gap-2 text-sm">
+                    <input type="checkbox" id="select-all-failed" onchange="toggleSelectAll(this)">
+                    全选
+                </label>
+            </div>
+            <div id="failed-songs-list" class="space-y-2 max-h-64 overflow-y-auto"
+                style="background: var(--card-bg); border-radius: 8px; padding: 12px;">
+                <div class="text-center text-gray-500 py-4">
+                    <i class="fas fa-spinner fa-spin mr-2"></i>加载中...
+                </div>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-between">
+            <button onclick="clearFailedDownloads()" class="text-sm text-red-400 hover:text-red-300">
+                <i class="fas fa-trash mr-1"></i>清空失败记录
+            </button>
+            <div class="flex gap-2">
+                <button onclick="closeRetryModal()" class="btn-secondary">取消</button>
+                <button onclick="retrySelected()" class="btn-primary" id="retry-submit-btn">
+                    <i class="fas fa-redo mr-1"></i>重试选中 (<span id="selected-count">0</span>)
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .modal {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal.hidden {
+        display: none;
+    }
+
+    .modal-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+    }
+
+    .modal-content {
+        position: relative;
+        z-index: 1001;
+        width: 90%;
+        animation: modalIn 0.2s ease;
+    }
+
+    @keyframes modalIn {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    .failed-song-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 8px;
+        border-radius: 6px;
+        transition: background 0.2s;
+    }
+
+    .failed-song-item:hover {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .failed-song-item input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+    }
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    let currentPage = 1;
+    let totalPages = 1;
+    const perPage = 20;
+    let weeklyChart = null;
+    let platformChart = null;
+
+    async function loadStats() {
+        try {
+            const res = await fetch('/api/download-stats');
+            const data = await res.json();
+
+            // 今日统计
+            const today = data.today || {};
+            document.getElementById('today-total').textContent = (today.success || 0) + (today.failed || 0);
+            document.getElementById('today-success').textContent = today.success || 0;
+            document.getElementById('today-failed').textContent = today.failed || 0;
+            document.getElementById('today-size').textContent = formatSize(today.size || 0);
+
+            const total = (today.success || 0) + (today.failed || 0);
+            const rate = total > 0 ? ((today.success || 0) / total * 100).toFixed(1) : 0;
+            document.getElementById('today-rate').textContent = rate + '%';
+
+            // 平台统计
+            const platforms = data.platforms || {};
+            document.getElementById('ncm-count').textContent = platforms.NCM || 0;
+            document.getElementById('qq-count').textContent = platforms.QQ || 0;
+
+            // 更新图表
+            updatePlatformChart(platforms.NCM || 0, platforms.QQ || 0);
+            updateWeeklyChart(data.weekly || []);
+
+        } catch (e) {
+            console.error('加载统计失败:', e);
+        }
+    }
+
+    async function loadCookieStatus() {
+        try {
+            const res = await fetch('/api/cookie-status');
+            const data = await res.json();
+
+            // 网易云
+            const ncmEl = document.getElementById('ncm-status');
+            const ncmNick = document.getElementById('ncm-nickname');
+            if (data.ncm && data.ncm.is_valid) {
+                ncmEl.textContent = 'VIP' + (data.ncm.is_vip ? ' ✓' : '');
+                ncmEl.className = 'text-xs px-2 py-1 rounded-full bg-green-500 bg-opacity-20 text-green-400';
+                ncmNick.textContent = data.ncm.nickname || '已登录';
+            } else if (data.ncm) {
+                ncmEl.textContent = '已过期';
+                ncmEl.className = 'text-xs px-2 py-1 rounded-full bg-red-500 bg-opacity-20 text-red-400';
+            } else {
+                ncmEl.textContent = '未配置';
+                ncmEl.className = 'text-xs px-2 py-1 rounded-full bg-gray-500 bg-opacity-20 text-gray-400';
+            }
+
+            // QQ
+            const qqEl = document.getElementById('qq-status');
+            const qqNick = document.getElementById('qq-nickname');
+            if (data.qq && data.qq.is_valid) {
+                qqEl.textContent = 'VIP' + (data.qq.is_vip ? ' ✓' : '');
+                qqEl.className = 'text-xs px-2 py-1 rounded-full bg-green-500 bg-opacity-20 text-green-400';
+                qqNick.textContent = data.qq.nickname || '已登录';
+            } else if (data.qq) {
+                qqEl.textContent = '已过期';
+                qqEl.className = 'text-xs px-2 py-1 rounded-full bg-red-500 bg-opacity-20 text-red-400';
+            } else {
+                qqEl.textContent = '未配置';
+                qqEl.className = 'text-xs px-2 py-1 rounded-full bg-gray-500 bg-opacity-20 text-gray-400';
+            }
+        } catch (e) {
+            console.error('加载Cookie状态失败:', e);
+        }
+    }
+
+    async function loadHistory() {
+        const platform = document.getElementById('platform-filter').value;
+        const status = document.getElementById('status-filter').value;
+
+        try {
+            const params = new URLSearchParams({
+                page: currentPage,
+                per_page: perPage
+            });
+            if (platform) params.append('platform', platform);
+            if (status) params.append('status', status);
+
+            const res = await fetch('/api/download-history?' + params);
+            const data = await res.json();
+
+            totalPages = Math.ceil(data.total / perPage) || 1;
+            document.getElementById('total-count').textContent = data.total || 0;
+            document.getElementById('page-info').textContent = `${currentPage} / ${totalPages}`;
+            document.getElementById('prev-btn').disabled = currentPage <= 1;
+            document.getElementById('next-btn').disabled = currentPage >= totalPages;
+
+            const tbody = document.getElementById('history-tbody');
+            if (!data.items || data.items.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" class="empty-state"><i class="fas fa-inbox"></i><p>暂无下载记录</p></td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = data.items.map(item => `
+                <tr>
+                    <td>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-gradient-to-br ${item.platform === 'QQ' ? 'from-green-500 to-green-600' : 'from-red-500 to-red-600'} flex items-center justify-center">
+                                <i class="fas fa-music text-xs text-white"></i>
+                            </div>
+                            <span class="truncate max-w-xs">${escapeHtml(item.title || '未知')}</span>
+                        </div>
+                    </td>
+                    <td class="text-gray-400">${escapeHtml(item.artist || '-')}</td>
+                    <td><span class="badge ${item.platform === 'QQ' ? 'badge-qq' : 'badge-ncm'}">${item.platform === 'QQ' ? 'QQ音乐' : '网易云'}</span></td>
+                    <td class="text-gray-400">${formatSize(item.file_size || 0)}</td>
+                    <td>
+                        ${item.status === 'completed'
+                    ? '<span class="text-green-400"><i class="fas fa-check-circle mr-1"></i>成功</span>'
+                    : `<div>
+                                <span class="text-red-400"><i class="fas fa-times-circle mr-1"></i>失败</span>
+                                ${item.error_message ? `<div class="text-xs text-red-400 opacity-75 mt-0.5 truncate max-w-xs" title="${escapeHtml(item.error_message)}">${escapeHtml(item.error_message)}</div>` : ''}
+                               </div>`}
+                    </td>
+                    <td class="text-gray-500 text-sm">${formatTime(item.created_at)}</td>
+                </tr>
+            `).join('');
+        } catch (e) {
+            console.error('加载历史失败:', e);
+        }
+    }
+
+    function updateWeeklyChart(data) {
+        const ctx = document.getElementById('weeklyChart').getContext('2d');
+        if (weeklyChart) weeklyChart.destroy();
+
+        const labels = data.map(d => d.date);
+        const success = data.map(d => d.success);
+        const failed = data.map(d => d.failed);
+
+        weeklyChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: '成功',
+                        data: success,
+                        backgroundColor: 'rgba(16, 185, 129, 0.8)',
+                        borderRadius: 4
+                    },
+                    {
+                        label: '失败',
+                        data: failed,
+                        backgroundColor: 'rgba(239, 68, 68, 0.8)',
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: { color: 'rgba(255,255,255,0.7)', usePointStyle: true }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { color: 'rgba(255,255,255,0.05)' },
+                        ticks: { color: 'rgba(255,255,255,0.5)' }
+                    },
+                    y: {
+                        grid: { color: 'rgba(255,255,255,0.05)' },
+                        ticks: { color: 'rgba(255,255,255,0.5)' },
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    function updatePlatformChart(ncm, qq) {
+        const ctx = document.getElementById('platformChart').getContext('2d');
+        if (platformChart) platformChart.destroy();
+
+        platformChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['网易云', 'QQ音乐'],
+                datasets: [{
+                    data: [ncm, qq],
+                    backgroundColor: ['rgba(239, 68, 68, 0.8)', 'rgba(16, 185, 129, 0.8)'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                cutout: '65%',
+                plugins: { legend: { display: false } }
+            }
+        });
+    }
+
+    function formatSize(bytes) {
+        if (bytes < 1024) return bytes + ' B';
+        if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+        if (bytes < 1024 * 1024 * 1024) return (bytes / 1024 / 1024).toFixed(1) + ' MB';
+        return (bytes / 1024 / 1024 / 1024).toFixed(2) + ' GB';
+    }
+
+    function formatTime(dateStr) {
+        if (!dateStr) return '-';
+        const date = new Date(dateStr + 'Z');
+        const now = new Date();
+        const diff = now - date;
+        if (diff < 60000) return '刚刚';
+        if (diff < 3600000) return Math.floor(diff / 60000) + ' 分钟前';
+        if (diff < 86400000) return Math.floor(diff / 3600000) + ' 小时前';
+        if (diff < 604800000) return Math.floor(diff / 86400000) + ' 天前';
+        return date.toLocaleDateString();
+    }
+
+    function escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+
+    function prevPage() {
+        if (currentPage > 1) {
+            currentPage--;
+            loadHistory();
+        }
+    }
+
+    function nextPage() {
+        if (currentPage < totalPages) {
+            currentPage++;
+            loadHistory();
+        }
+    }
+
+    // ============================================================
+    // 批量重试功能
+    // ============================================================
+
+    let failedSongs = [];
+    let selectedSongIds = new Set();
+
+    function showRetryModal() {
+        document.getElementById('retry-modal').classList.remove('hidden');
+        loadFailedSongs();
+    }
+
+    function closeRetryModal() {
+        document.getElementById('retry-modal').classList.add('hidden');
+    }
+
+    async function loadFailedSongs() {
+        const days = document.getElementById('retry-days').value;
+        const listEl = document.getElementById('failed-songs-list');
+
+        listEl.innerHTML = '<div class="text-center text-gray-500 py-4"><i class="fas fa-spinner fa-spin mr-2"></i>加载中...</div>';
+
+        try {
+            const res = await fetch(`/api/download-history/failed?days=${days}`);
+            const data = await res.json();
+
+            failedSongs = data.items || [];
+            document.getElementById('failed-count').textContent = failedSongs.length;
+
+            if (failedSongs.length === 0) {
+                listEl.innerHTML = '<div class="text-center text-gray-500 py-4"><i class="fas fa-check-circle text-green-400 mr-2"></i>没有失败的下载记录</div>';
+                return;
+            }
+
+            listEl.innerHTML = failedSongs.map(song => `
+                <div class="failed-song-item">
+                    <input type="checkbox" 
+                           value="${song.id}" 
+                           onchange="updateSelectedCount()"
+                           ${selectedSongIds.has(song.id) ? 'checked' : ''}>
+                    <div class="flex-1 min-w-0">
+                        <div class="font-medium truncate">${escapeHtml(song.title || '未知歌曲')}</div>
+                        <div class="text-xs text-gray-500">${escapeHtml(song.artist || '-')} · ${song.platform === 'QQ' ? 'QQ音乐' : '网易云'}</div>
+                    </div>
+                    <span class="text-xs text-red-400" title="${escapeHtml(song.error_message || '')}">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </span>
+                </div>
+            `).join('');
+
+            updateSelectedCount();
+        } catch (e) {
+            console.error('加载失败歌曲失败:', e);
+            listEl.innerHTML = '<div class="text-center text-red-400 py-4"><i class="fas fa-exclamation-circle mr-2"></i>加载失败</div>';
+        }
+    }
+
+    function toggleSelectAll(checkbox) {
+        const checkboxes = document.querySelectorAll('#failed-songs-list input[type="checkbox"]');
+        checkboxes.forEach(cb => cb.checked = checkbox.checked);
+        updateSelectedCount();
+    }
+
+    function updateSelectedCount() {
+        const checkboxes = document.querySelectorAll('#failed-songs-list input[type="checkbox"]:checked');
+        const count = checkboxes.length;
+        document.getElementById('selected-count').textContent = count;
+        document.getElementById('retry-submit-btn').disabled = count === 0;
+
+        // 更新全选状态
+        const allCheckboxes = document.querySelectorAll('#failed-songs-list input[type="checkbox"]');
+        document.getElementById('select-all-failed').checked = allCheckboxes.length > 0 && checkboxes.length === allCheckboxes.length;
+    }
+
+    async function retrySelected() {
+        const checkboxes = document.querySelectorAll('#failed-songs-list input[type="checkbox"]:checked');
+        const songIds = Array.from(checkboxes).map(cb => parseInt(cb.value));
+
+        if (songIds.length === 0) {
+            alert('请选择要重试的歌曲');
+            return;
+        }
+
+        const btn = document.getElementById('retry-submit-btn');
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i>处理中...';
+
+        try {
+            const res = await fetch('/api/download-history/retry', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ song_ids: songIds })
+            });
+            const data = await res.json();
+
+            if (data.success) {
+                alert(`✅ ${data.message}`);
+                closeRetryModal();
+                loadHistory();
+            } else {
+                alert(`❌ ${data.error || '操作失败'}`);
+            }
+        } catch (e) {
+            alert('请求失败: ' + e.message);
+        } finally {
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fas fa-redo mr-1"></i>重试选中 (<span id="selected-count">0</span>)';
+            updateSelectedCount();
+        }
+    }
+
+    async function clearFailedDownloads() {
+        const days = document.getElementById('retry-days').value;
+
+        if (!confirm(`确定要清空最近 ${days} 天的所有失败记录吗？此操作不可恢复。`)) {
+            return;
+        }
+
+        try {
+            const res = await fetch(`/api/download-history/failed?days=${days}`, {
+                method: 'DELETE'
+            });
+            const data = await res.json();
+
+            if (data.success) {
+                alert(`✅ 已清空 ${data.deleted} 条失败记录`);
+                loadFailedSongs();
+                loadHistory();
+                loadStats();
+            } else {
+                alert(`❌ ${data.error || '操作失败'}`);
+            }
+        } catch (e) {
+            alert('请求失败: ' + e.message);
+        }
+    }
+
+    // 初始化
+    loadStats();
+    loadCookieStatus();
+    loadHistory();
+</script>
+{% endblock %}
