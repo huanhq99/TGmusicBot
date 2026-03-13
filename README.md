@@ -5,6 +5,9 @@
   <img src="https://img.shields.io/github/forks/huanhq99/TGmusicbot?style=flat-square&logo=github" alt="Forks">
   <img src="https://img.shields.io/github/license/huanhq99/TGmusicbot?style=flat-square&logo=mit" alt="License">
   <img src="https://img.shields.io/docker/pulls/huanhq99/tgmusicbot?style=flat-square&logo=docker" alt="Docker Pulls">
+  <a href="https://t.me/EmbyCockpit" target="_blank">
+    <img src="https://img.shields.io/badge/Telegram-加入交流群-0088cc?style=flat-square&logo=telegram" alt="Telegram Group">
+  </a>
 </p>
 
 一站式 Telegram 音乐助手：**同步网易云 / QQ 音乐 / Spotify 歌单到 Emby**，自动补全缺失歌曲，并提供 Web 管理面板与实时 Webhook 通知。
@@ -27,12 +30,7 @@
 
 ## 👥 交流与支持
 
-<p align="center">
-  遇到问题或有功能建议？欢迎加入我们的社群：<br><br>
-  <a href="https://t.me/EmbyCockpit" target="_blank">
-    <img src="https://img.shields.io/badge/Telegram-加入交流群-0088cc?style=for-the-badge&logo=telegram" alt="Telegram Group">
-  </a>
-</p>
+遇到问题或有功能建议？欢迎加入我们的 [Telegram 交流群](https://t.me/EmbyCockpit)。
 
 ---
 
