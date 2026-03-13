@@ -75,7 +75,9 @@ services:
       # QQ音乐国内中转 URL & KEY
       - MUSIC_PROXY_URL=${MUSIC_PROXY_URL:-}
       - MUSIC_PROXY_KEY=${MUSIC_PROXY_KEY:-}
-    
+      # 国内机器请配置代理环境
+      - HTTP_PROXY=
+      - HTTPS_PROXY=
     logging:
       driver: json-file
       options:
