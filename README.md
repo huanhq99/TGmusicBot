@@ -7,20 +7,38 @@
   <img src="https://img.shields.io/docker/pulls/huanhq99/tgmusicbot?style=flat-square&logo=docker" alt="Docker Pulls">
 </p>
 
-一站式 Telegram 音乐助手：同步网易云 / QQ音乐 / Spotify 歌单到 Emby，自动补全缺失歌曲，并提供 Web 管理与实时 Webhook 通知。
+一站式 Telegram 音乐助手：**同步网易云 / QQ 音乐 / Spotify 歌单到 Emby**，自动补全缺失歌曲，并提供 Web 管理面板与实时 Webhook 通知。
+
+> [!TIP]
+> **觉得项目好用？给个 Star ⭐️ 是对我最大的支持！**
+
+---
 
 ## ✨ 功能亮点
-- **歌单同步**：多平台歌单导入，自动匹配 Emby 库并生成播放列表。**直接发歌单链接即可同步**，无需命令。
-- **跨平台下载**：网易云 + QQ 音乐双引擎，失败自动切换，支持多种音质与元数据写入。
-- **实时通知**：Emby Webhook 直接推送 Telegram，Web 面板提供测试按钮排障。
-- **上传与整理**：聊天中上传音频自动落盘，可通过文件整理器按艺术家/专辑归档。
-- **自动化任务**：歌单订阅、定时扫描、Cookie 预警、下载重试、每日统计等。
-- **可视化管理**：Web UI 涵盖扫码登录、配置、下载历史、Webhook 状态、整理器等。
+
+- 🔗 **歌单秒同步**：直接发送网易云/QQ/Spotify 歌单链接，机器人自动识别并同步到 Emby。
+- 📥 **跨平台下载**：网易云 + QQ 音乐双引擎，支持无损、Hi-Res、Master 音质，自动补全元数据与封面。
+- 🤖 **自动化任务**：订阅喜欢的歌单，定时扫描更新，新歌自动落盘并同步至 Emby 播放列表。
+- 📦 **智能整理**：内置文件整理器，按 艺术家/专辑 自动分类归档，让库不再凌乱。
+- 📱 **实时推送**：Emby 新入库歌曲通过 Telegram 实时通知，状态一目了然。
+- 🖥️ **可视化面板**：精致的 Web UI，支持扫码登录、下载记录查看、系统配置管理。
+
+---
+
+## 👥 交流与支持
+
+<p align="center">
+  遇到问题或有功能建议？欢迎加入我们的社群：<br><br>
+  <a href="https://t.me/EmbyCockpit" target="_blank">
+    <img src="https://img.shields.io/badge/Telegram-加入交流群-0088cc?style=for-the-badge&logo=telegram" alt="Telegram Group">
+  </a>
+</p>
 
 ---
 
 ## 🚀 Docker 快速部署
-**创建 `docker-compose.yml`**
+
+**1. 创建 `docker-compose.yml`**
 
 ```yaml
 services:
@@ -56,9 +74,9 @@ services:
       - EMBY_SCAN_INTERVAL=${EMBY_SCAN_INTERVAL:-6}
       # 加密密钥（自定义）
       - PLAYLIST_BOT_KEY=${PLAYLIST_BOT_KEY}
-      # QQ音乐国内中转URi KEy
-      - MUSIC_PROXY_URL=
-      - MUSIC_PROXY_KEY=
+      # QQ音乐国内中转 URL & KEY
+      - MUSIC_PROXY_URL=${MUSIC_PROXY_URL:-}
+      - MUSIC_PROXY_KEY=${MUSIC_PROXY_KEY:-}
     
     logging:
       driver: json-file
@@ -67,45 +85,34 @@ services:
         max-file: "3"
 ```
 
-> **如果你是国外机器，则需要部署music-proxy-compose.yaml把部署好的RUL KEY填在变量中即可**
+> **如果你是国外机器，则需要部署 music-proxy-compose.yaml 并将 URL & KEY 填在变量中即可。**
 
-3. **启动与访问**
-	 ```bash
-	 docker compose up -d
-	 # Web 管理界面: http://<服务器IP>:8080
-	 ```
+**2. 启动服务**
+
+```bash
+docker compose up -d
+# 访问管理界面: http://<服务器IP>:8080
+```
+
 ---
 
-## ⚙️ 环境变量速查
+## ⚙️ 环境变量详细说明
+
 | 变量 | 说明 | 是否必填 |
-|------|------|----------|
-| `TELEGRAM_BOT_TOKEN` | Telegram Bot Token（1.7.8 推荐） | ✅ |
-| `TELEGRAM_TOKEN` | 旧名，若保留将作为兼容备用 | 可选 |
-| `ADMIN_USER_ID` | 接收系统 / Webhook 推送的 Telegram ID | ✅ |
-| `EMBY_URL` / `EMBY_USERNAME` / `EMBY_PASSWORD` | Emby 服务地址与凭据 | ✅ |
-| `PLAYLIST_BOT_KEY` | 加密存储用的随机字符串 | ✅ |
-| `WEB_USERNAME` / `WEB_PASSWORD` | Web 管理界面登录信息 | 推荐 |
-| `MUSIC_PROXY_URL` / `MUSIC_PROXY_KEY` | 海外主机使用国内代理下载时配置 | 可选 |
-| `TG_API_ID` / `TG_API_HASH` | 启用 Pyrogram 大文件上传 | 可选 |
-| `TELEGRAM_API_URL` | 自建 Telegram Bot API Server 地址 | 可选 |
-| `EMBY_WEBHOOK_NOTIFY` | 是否启用 Webhook Telegram 推送 (默认 true) | 可选 |
-
-> 更多变量请参考 `docker-compose.yml` 与代码注释。
-
-> 关于音乐中转：机器人部署在海外时，请在国内单独部署代理服务（Clash、sing-box 或自建 API 均可），然后把该机器的公网地址填入 `MUSIC_PROXY_URL`。无需把代理容器和 bot 放在同一 compose 文件里。
-
----
-
-## 📱 Bot 命令速览
-| 命令 | 说明 |
-|------|------|
-| `/start` `/help` | 主菜单 / 帮助 |
-| `/bind` | 绑定 Emby 账号 |
-| `/status` | 查看当前配置、Cookie、订阅等 |
-| `/search` `/album` | 搜索并下载歌曲 / 专辑 |
-| `/request` `/myrequests` | 歌曲补全申请与查询 |
-| `/schedule` `/unschedule` | 管理歌单订阅 |
-| `/rescan` `/scaninterval` | 触发 / 设置 Emby 扫描 |
+|------|------|:---:|
+| `TELEGRAM_BOT_TOKEN` | 从 @BotFather 获取的机器令牌 | ✅ |
+| `ADMIN_USER_ID` | 接收系统通知的 Telegram 用户 ID | ✅ |
+| `WEB_PASSWORD` | Web 管理界面的登录密码 | ✅ |
+| `EMBY_URL` | Emby 服务的访问地址 (如 `http://192.168.1.100:8096`) | ✅ |
+| `EMBY_USERNAME` | Emby 管理员或具有库编辑权限的用户名 | ✅ |
+| `EMBY_PASSWORD` | 对应的 Emby 登录密码 | ✅ |
+| `PLAYLIST_BOT_KEY` | 用于数据库加密存储的随机字符串（建议 16 位以上） | ✅ |
+| `WEB_USERNAME` | Web 用户名 (默认 `admin`) | 可选 |
+| `EMBY_SCAN_INTERVAL` | 自动扫描 Emby 库的时间间隔 (单位：小时，0 为禁用) | 可选 |
+| `MUSIC_PROXY_URL` | 国内中转代理地址 (海外 VPS 访问国内音乐接口用) | 可选 |
+| `MUSIC_PROXY_KEY` | 国内中转代理对应的访问 Key | 可选 |
+| `TG_API_ID` / `TG_API_HASH` | 开启 Pyrogram 大文件上传支持 (需在 my.telegram.org 申请) | 可选 |
+| `TZ` | 容器时区 (默认 `Asia/Shanghai`) | 可选 |
 
 ---
 
@@ -191,5 +198,5 @@ TGmusicbot/
 - **如果你觉得该项目能帮到你，且有条件的情况下可以请我喝杯咖啡**
 <img src="https://img.huanhq.com/1765174910475_e0bda6f3bae25cceadb246e71a814aea.jpg" width="200" alt="赞助">
 
-## 📄 License
+## 📄 开源协议
 MIT License
