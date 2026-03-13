@@ -1,4 +1,11 @@
-# 🎵 TGmusicbot
+# 🎶 TGmusicbot - 你的全能 Emby 音乐管家
+
+<p align="center">
+  <img src="https://img.shields.io/github/stars/huanhq99/TGmusicbot?style=flat-square&logo=github" alt="Stars">
+  <img src="https://img.shields.io/github/forks/huanhq99/TGmusicbot?style=flat-square&logo=github" alt="Forks">
+  <img src="https://img.shields.io/github/license/huanhq99/TGmusicbot?style=flat-square&logo=mit" alt="License">
+  <img src="https://img.shields.io/docker/pulls/huanhq99/tgmusicbot?style=flat-square&logo=docker" alt="Docker Pulls">
+</p>
 
 一站式 Telegram 音乐助手：同步网易云 / QQ音乐 / Spotify 歌单到 Emby，自动补全缺失歌曲，并提供 Web 管理与实时 Webhook 通知。
 
