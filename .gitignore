@@ -1,0 +1,21 @@
+# ===== 源码和运行时文件（不推到 GitHub，镜像走 Docker Hub）=====
+bot/
+data/
+proxy-server/
+uploads/
+watch/
+music/
+Dockerfile
+requirements.txt
+start.sh
+
+# ===== 环境和缓存 =====
+.env
+.DS_Store
+__pycache__/
+*.pyc
+*.db
+*.sqlite3
+node_modules/
+venv/
+env/
