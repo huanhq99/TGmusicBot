@@ -49,41 +49,80 @@ services:
     volumes:
       - ./data:/app/data              # 数据库、缓存、日志
       - ./uploads:/app/uploads        # 下载的音乐文件
-      - /path/to/music:/music         # 整理目标目录（可选）
+      - ./watch:/watch                # 监控来源目录（自动整理功能用）
+      - ./music:/music                # 整理目标目录
     environment:
       - TZ=Asia/Shanghai
       - DATA_DIR=/app/data
-      - UPLOAD_DIR=/tmp/tgmusicbot_uploads
-      - MUSIC_TARGET_DIR=/app/uploads
-      # Telegram 配置（Bot Token 和管理员 ID）
-      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
-      - ADMIN_USER_ID=${ADMIN_USER_ID}
-      # Telegram API 大文件上传支持（可选，可上传超过 20MB 的文件）
-      - TG_API_ID=${TG_API_ID:-}
-      - TG_API_HASH=${TG_API_HASH:-}
-      # Web 管理界面用户名密码
-      - WEB_USERNAME=${WEB_USERNAME:-admin}
-      - WEB_PASSWORD=${WEB_PASSWORD}
-      # Emby 配置
-      - EMBY_URL=${EMBY_URL}
-      - EMBY_USERNAME=${EMBY_USERNAME}
-      - EMBY_PASSWORD=${EMBY_PASSWORD}
-      # Emby 自动扫描间隔（小时，0=禁用）
-      - EMBY_SCAN_INTERVAL=${EMBY_SCAN_INTERVAL:-6}
-      # 加密密钥（自定义）
-      - PLAYLIST_BOT_KEY=${PLAYLIST_BOT_KEY}
-      # QQ音乐国内中转 URL & KEY
-      - MUSIC_PROXY_URL=${MUSIC_PROXY_URL:-}
-      - MUSIC_PROXY_KEY=${MUSIC_PROXY_KEY:-}
-      # 国内机器请配置代理环境
-      - HTTP_PROXY=
-      - HTTPS_PROXY=
+      - UPLOAD_DIR=/app/uploads
+      - MUSIC_TARGET_DIR=/music
+
+      # ===== Telegram 配置（必填）=====
+      - TELEGRAM_BOT_TOKEN=  # 你的bot机器人token
+      - ADMIN_USER_ID=   # 你的 Telegram 用户ID
+      - TG_API_ID=${TELEGRAM_API_URL:-}         # 可选，用于上传大于20MB文件
+      - TG_API_HASH=${TELEGRAM_API_URL:-}     # 可选，从 my.telegram.org 获取
+      - TELEGRAM_API_URL=${TELEGRAM_API_URL:-} # 可选，本地 Bot API 服务器地址
+
+      # ===== Web 管理界面登录 =====
+      - WEB_USERNAME=
+      - WEB_PASSWORD=     # 必填，设置管理界面密码
+
+      # ===== Emby 配置 =====
+      - EMBY_URL=                        # Emby 服务器地址
+      - EMBY_API_KEY=                    # Emby API 密钥
+      # Emby 账号通过 Web 或 Bot /bind 命令绑定，无需在此配置
+
+      # ===== 其他 =====
+      - PLAYLIST_BOT_KEY=${PLAYLIST_BOT_KEY:-}  # 歌单加密密钥
+      - ENABLE_USER_REGISTER=${ENABLE_USER_REGISTER:-true}  # 是否开放注册
+
+      # ===== QQ音乐国内中转（可选）=====
+      - MUSIC_PROXY_URL=${MUSIC_PROXY_URL:-} # 中转服务地址
+      - MUSIC_PROXY_KEY=${MUSIC_PROXY_KEY:-}  # 中转服务密钥
+
+      # ===== Redis 配置 =====
+      - REDIS_URL=redis://redis:6379/0
+
+      # ===== Telegram 代理（可选，国内服务器需要）=====
+      # - TELEGRAM_PROXY=http://192.168.1.x:7890
+
+    depends_on:
+      - redis
     logging:
       driver: json-file
       options:
         max-size: "10m"
         max-file: "3"
+
+  redis:
+    image: redis:7-alpine
+    container_name: tgmusicbot-redis
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+
+volumes:
+  redis_data:
 ```
+
+> [!IMPORTANT]
+> **部署前必须配置以下环境变量，否则无法正常使用：**
+>
+> | 变量 | 说明 | 获取方式 |
+> |------|------|----------|
+> | `TELEGRAM_BOT_TOKEN` | Telegram 机器人 Token | 找 [@BotFather](https://t.me/BotFather) 创建机器人获取 |
+> | `ADMIN_USER_ID` | 管理员 Telegram 用户 ID | 找 [@userinfobot](https://t.me/userinfobot) 获取 |
+> | `WEB_USERNAME` | Web 管理界面登录用户名 | 自定义，默认 `admin` |
+> | `WEB_PASSWORD` | Web 管理界面登录密码 | 自定义 |
+> | `EMBY_URL` | Emby 服务器地址 | 如 `http://192.168.1.100:8096` |
+> | `EMBY_API_KEY` | Emby API 密钥 | Emby 后台 → 设置 → API 密钥 → 新建 |
+
+> [!TIP]
+> **国内服务器部署注意：**
+> - 必须配置 `TELEGRAM_PROXY`（如 `http://127.0.0.1:7890`），否则无法连接 Telegram
+> - 建议同时部署国内中转代理服务（见下方），否则可能无法下载高音质 QQ/网易云音乐
 
 > **如果您的主机器人部署在国外服务器，请在一台国内机器上部署此中转代理服务，否则可能无法下载高音质的 QQ 音乐和网易云。**
 
@@ -207,22 +246,18 @@ TGmusicbot/
 
 
 ## 🆕 最近更新
+- **v1.12.12** (2026-03-17)
+	- 🌟 **下载管理页面全新改版**：新增详细的歌曲下载记录，包含歌手、音质格式、文件大小、下载平台、下载时间等完整信息。
+	- 🌟 **下载趋势图 & 平台分布图**：可视化展示最近 7 天下载数据。
+	- 🌟 **分页 + 筛选**：下载记录支持按平台和状态筛选，每页 20 条分页浏览。
+	- 修复管理员 Emby 绑定持久化、弹窗 undefined、版本号不同步等多项 Bug。
+
 - **v1.10.1**
 	- 🌟 **歌单链接自动识别**：直接发送网易云/QQ音乐歌单链接（支持短链接 163cn.tv），Bot 自动弹出 [立即下载] / [订阅同步] 按钮。
 	- 🌟 **智能同步**：先同步到 Emby，再下载缺失歌曲，不会重复下载。
-	- 🌟 **同步间隔继承**：订阅歌单可跟随全局同步间隔设置。
 	- 修复多项类型安全、配置读取、回调超时等问题。
 
-- **v1.10.0**
-	- 文件整理器优化与 bug 修复。
-	- 下载记录持久化改进。
-
-- **v1.9.x**
-	- Webhook 改为直接调用 Telegram HTTP API 发送消息。
-	- Web "测试通知" 按钮真实推送 Telegram。
-	- 多项 QQ/网易云下载、元数据修复。
-
-> 更早的版本记录请查看 GitHub Releases。
+> 更早的版本记录请查看 `CHANGELOG.md` 或 GitHub Releases。
 
 👉 查看完整更新轨迹：`CHANGELOG.md`
 
