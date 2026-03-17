@@ -70,8 +70,9 @@ services:
 
       # ===== Emby 配置 =====
       - EMBY_URL=                        # Emby 服务器地址
-      - EMBY_API_KEY=                    # Emby API 密钥
-      # Emby 账号通过 Web 或 Bot /bind 命令绑定，无需在此配置
+      - EMBY_API_KEY=                    # Emby API 密钥（用户管理需要）
+      - EMBY_USERNAME=                   # Emby 管理员用户名（扫库/歌单同步需要）
+      - EMBY_PASSWORD=                   # Emby 管理员密码
 
       # ===== 其他 =====
       - PLAYLIST_BOT_KEY=${PLAYLIST_BOT_KEY:-}  # 歌单加密密钥
@@ -118,6 +119,8 @@ volumes:
 > | `WEB_PASSWORD` | Web 管理界面登录密码 | 自定义 |
 > | `EMBY_URL` | Emby 服务器地址 | 如 `http://192.168.1.100:8096` |
 > | `EMBY_API_KEY` | Emby API 密钥 | Emby 后台 → 设置 → API 密钥 → 新建 |
+> | `EMBY_USERNAME` | Emby 管理员用户名 | 扫库和歌单同步需要 |
+> | `EMBY_PASSWORD` | Emby 管理员密码 | 对应的登录密码 |
 
 > [!TIP]
 > **国内服务器部署注意：**
@@ -244,22 +247,6 @@ TGmusicbot/
 
 ---
 
-
-## 🆕 最近更新
-- **v1.12.12** (2026-03-17)
-	- 🌟 **下载管理页面全新改版**：新增详细的歌曲下载记录，包含歌手、音质格式、文件大小、下载平台、下载时间等完整信息。
-	- 🌟 **下载趋势图 & 平台分布图**：可视化展示最近 7 天下载数据。
-	- 🌟 **分页 + 筛选**：下载记录支持按平台和状态筛选，每页 20 条分页浏览。
-	- 修复管理员 Emby 绑定持久化、弹窗 undefined、版本号不同步等多项 Bug。
-
-- **v1.10.1**
-	- 🌟 **歌单链接自动识别**：直接发送网易云/QQ音乐歌单链接（支持短链接 163cn.tv），Bot 自动弹出 [立即下载] / [订阅同步] 按钮。
-	- 🌟 **智能同步**：先同步到 Emby，再下载缺失歌曲，不会重复下载。
-	- 修复多项类型安全、配置读取、回调超时等问题。
-
-> 更早的版本记录请查看 `CHANGELOG.md` 或 GitHub Releases。
-
-👉 查看完整更新轨迹：`CHANGELOG.md`
 
 ---
 ##  💰 赞助
