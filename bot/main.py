@@ -7729,15 +7729,12 @@ def main():
         
     app.post_init = post_init
     
-    # Pyrogram (Optional)
+    # Pyrogram (Optional) — 启动大文件上传支持
     if TG_API_ID and TG_API_HASH:
-        # Check if pyro.py exists in handlers, assuming check before import
-        # Or wrap in try-except
         try:
-             from bot.handlers.pyro import start_pyrogram_client
-             asyncio.get_event_loop().run_until_complete(start_pyrogram_client())
-        except ImportError:
-             logger.warning("Pyrogram handler not found, skipping large file support")
+            asyncio.get_event_loop().run_until_complete(start_pyrogram_client())
+        except Exception as e:
+            logger.error(f"Pyrogram 客户端启动失败: {e}")
     
     app.run_polling()
 
