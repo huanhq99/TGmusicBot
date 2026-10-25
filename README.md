@@ -1,5 +1,20 @@
 # 🎶 TGmusicbot - 你的全能 Emby 音乐管家
 
+> [!IMPORTANT]
+> ## ⚠️ 本项目已停止维护，功能已并入 FlixPilot
+>
+> TGmusicbot 的全部功能（网易云 / QQ 音乐搜索下载、歌单订阅与同步到 Emby、缺失歌曲补全、Telegram 机器人、音乐入库通知）已经用 Go 重写，并入 **[FlixPilot](https://github.com/huanhq99/FlixPilot)** 的「音乐」页面。**本仓库不再更新，也不再处理 Issue。**
+>
+> | | |
+> |---|---|
+> | 新项目 | [huanhq99/FlixPilot](https://github.com/huanhq99/FlixPilot) |
+> | Docker 镜像 | [`huanhq99/flixpilot`](https://hub.docker.com/r/huanhq99/flixpilot)（amd64 / arm64） |
+> | 旧镜像 | `huanhq99/tgmusicbot` 停留在最后一个版本，不会再更新 |
+>
+> **想继续使用音乐功能的话：** 部署 FlixPilot，在「音乐」页登录网易云 / QQ 音乐账号、选好音乐库目录即可；Telegram 里直接发送歌单链接，同样可以订阅和同步。旧版的数据库和配置没有自动迁移，需要重新登录账号、重新添加订阅。
+
+---
+
 <p align="center">
   <img src="https://img.shields.io/github/stars/huanhq99/TGmusicbot?style=flat-square&logo=github" alt="Stars">
   <img src="https://img.shields.io/github/forks/huanhq99/TGmusicbot?style=flat-square&logo=github" alt="Forks">
